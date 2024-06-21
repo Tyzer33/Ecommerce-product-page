@@ -1,4 +1,4 @@
-import iconCart from '../../assets/icon-cart.svg'
+import IconCart from './IconCart'
 
 function CartButton() {
   return (
@@ -8,7 +8,7 @@ function CartButton() {
       onClick={() => console.log('toggle cart')}
       aria-label="Toggle cart"
     >
-      <img src={iconCart} alt="Cart icon" />
+      <IconCart />
     </button>
   )
 }
