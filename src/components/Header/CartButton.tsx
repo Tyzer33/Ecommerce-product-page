@@ -1,6 +1,9 @@
 import IconCart from './IconCart'
 
 function CartButton() {
+  const itemsInCart = 0
+  const cartOpen = false
+
   return (
     <button
       type="button"
@@ -8,7 +11,7 @@ function CartButton() {
       onClick={() => console.log('toggle cart')}
       aria-label="Toggle cart"
     >
-      <IconCart />
+      <IconCart active={cartOpen || itemsInCart > 0} />
     </button>
   )
 }

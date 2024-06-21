@@ -1,6 +1,9 @@
-function IconCart() {
+import { twJoin } from 'tailwind-merge'
+
+function IconCart({ active }: Props) {
   return (
     <svg
+      className={twJoin(active ? 'fill-active' : 'fill-base')}
       width="22"
       height="20"
       xmlns="http://www.w3.org/2000/svg"
@@ -13,3 +16,7 @@ function IconCart() {
   )
 }
 export default IconCart
+
+type Props = {
+  active: boolean
+}
