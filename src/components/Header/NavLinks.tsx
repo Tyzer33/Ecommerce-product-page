@@ -17,9 +17,9 @@ function NavLinks({ type }: Props) {
             href="#"
             className={twJoin(
               type === 'header' &&
-                'relative hover:text-heading focus:outline-none focus-visible:text-heading',
+                'relative transition-colors hover:text-heading focus:outline-none focus-visible:text-heading',
               type === 'header' &&
-                'before:absolute before:inset-0 before:-bottom-[3.125rem] before:top-auto before:h-1 hover:before:bg-accent focus-visible:before:bg-accent',
+                'before:absolute before:inset-0 before:-bottom-[3.125rem] before:top-auto before:h-1 before:transition-colors hover:before:bg-accent focus-visible:before:bg-accent',
             )}
           >
             {link}
