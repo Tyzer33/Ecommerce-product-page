@@ -1,5 +1,7 @@
 import { twJoin } from 'tailwind-merge'
 
+const navLinks = ['Collections', 'Men', 'Women', 'About', 'Contact']
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 function NavLinks({ type }: Props) {
   return (
@@ -9,21 +11,11 @@ function NavLinks({ type }: Props) {
         type === 'header' && `ml-14 flex gap-8 text-[.9375rem] text-body`,
       )}
     >
-      <li>
-        <a href="#">Collections</a>
-      </li>
-      <li>
-        <a href="#">Men</a>
-      </li>
-      <li>
-        <a href="#">Women</a>
-      </li>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
+      {navLinks.map((link) => (
+        <li key={link}>
+          <a href="#">{link}</a>
+        </li>
+      ))}
     </ul>
   )
 }
