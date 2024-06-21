@@ -15,9 +15,10 @@ function NavLinks({ type }: Props) {
         <li key={link}>
           <a
             className={twJoin(
-              type === 'header' && 'relative hover:text-heading',
               type === 'header' &&
-                'before:absolute before:inset-0 before:-bottom-[3.125rem] before:top-auto before:h-1 hover:before:bg-accent',
+                'relative hover:text-heading focus:text-heading focus:outline-none',
+              type === 'header' &&
+                'before:absolute before:inset-0 before:-bottom-[3.125rem] before:top-auto before:h-1 hover:before:bg-accent focus:before:bg-accent',
             )}
             href="#"
           >
