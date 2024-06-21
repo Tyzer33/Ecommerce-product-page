@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import iconMenu from '../../assets/icon-menu.svg'
+import NavMenu from './NavMenu'
 
 function NavMenuButton() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,7 +18,7 @@ function NavMenuButton() {
       </button>
       {isMenuOpen &&
         createPortal(
-          <div>Menu</div>,
+          <NavMenu />,
           document.body,
         )}
     </>
