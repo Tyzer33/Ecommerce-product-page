@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0, 0%, 100%;
+    --accent: 26, 100%, 55%;
+    --lightbox-background: 0, 0%, 0%, 0.75;
+
+    --txt-body: 219, 9%, 45%;
+    --txt-heading: 220, 13%, 13%;
+
+    --fill-base: 219, 9%, 45%;
+    --fill-active: 220, 13%, 13%;
+  }
+
   body {
     @apply font-kumbh-sans text-base/[1.625rem];
   }
