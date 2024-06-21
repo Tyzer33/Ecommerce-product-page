@@ -8,7 +8,8 @@ function NavLinks({ type }: Props) {
     <ul
       className={twJoin(
         type === 'menu' && `space-y-[1.125rem] text-lg font-bold`,
-        type === 'header' && `ml-14 flex gap-8 text-[.9375rem] text-body`,
+        type === 'header' &&
+          `relative ml-14 flex gap-8 text-[.9375rem] text-body`,
       )}
     >
       {navLinks.map((link) => (
@@ -20,6 +21,7 @@ function NavLinks({ type }: Props) {
                 'relative transition-colors hover:text-heading focus:outline-none focus-visible:text-heading',
               type === 'header' &&
                 'before:absolute before:inset-0 before:-bottom-[3.125rem] before:top-auto before:h-1 before:transition-colors hover:before:bg-accent focus-visible:before:bg-accent',
+              type === 'header' && 'after:absolute after:-inset-[0.5em]',
             )}
           >
             {link}
