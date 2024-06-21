@@ -10,7 +10,7 @@ function CartButton() {
     <button
       type="button"
       className={twJoin(
-        'relative ml-auto',
+        'relative ml-auto transition-colors',
         active ? 'fill-active' : 'fill-base',
         'hover:fill-active focus:outline-none focus-visible:fill-active',
       )}
