@@ -6,6 +6,7 @@ function NavLinks({ type }: Props) {
     <ul
       className={twJoin(
         type === 'menu' && `space-y-[1.125rem] text-lg font-bold`,
+        type === 'header' && `ml-14 flex gap-8 text-[.9375rem] text-body`,
       )}
     >
       <li>
