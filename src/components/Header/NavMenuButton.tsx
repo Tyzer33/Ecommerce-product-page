@@ -18,7 +18,7 @@ function NavMenuButton() {
       </button>
       {isMenuOpen &&
         createPortal(
-          <NavMenu />,
+          <NavMenu closeMenu={() => setIsMenuOpen(false)} />,
           document.body,
         )}
     </>
