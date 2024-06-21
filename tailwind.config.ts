@@ -19,6 +19,9 @@ export default {
       fontFamily: {
         'kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
       },
+      borderWidth: {
+        1: '1px',
+      },
     },
   },
   plugins: [],
