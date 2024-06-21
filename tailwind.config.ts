@@ -19,6 +19,9 @@ export default {
       fontFamily: {
         'kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
       },
+      outlineColor: {
+        accent: 'hsla(var(--accent))',
+      },
       borderWidth: {
         1: '1px',
       },
