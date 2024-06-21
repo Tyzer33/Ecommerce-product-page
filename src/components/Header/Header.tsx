@@ -20,7 +20,7 @@ function Header() {
         className={twJoin(
           'ml-[1.375rem] rounded-full lg:ml-[2.875rem]',
           'outline outline-2 -outline-offset-2 outline-transparent',
-          'focus:outline-accent hover:outline-accent',
+          'focus-visible:outline-accent hover:outline-accent',
         )}
       >
         <img
