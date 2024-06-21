@@ -19,8 +19,8 @@ function Header() {
         type="button"
         className={twJoin(
           'ml-[1.375rem] rounded-full lg:ml-[2.875rem]',
-          'hover:outline-accent hover:outline hover:outline-2 hover:-outline-offset-2',
-          'focus:outline-accent focus:outline focus:outline-2 focus:-outline-offset-2',
+          'outline outline-2 -outline-offset-2 outline-transparent',
+          'focus:outline-accent hover:outline-accent',
         )}
       >
         <img
