@@ -1,3 +1,4 @@
+import { twJoin } from 'tailwind-merge'
 import logo from '../../assets/logo.svg'
 import avatar from '../../assets/image-avatar.png'
 import NavMenuButton from './NavMenuButton'
@@ -16,7 +17,11 @@ function Header() {
       <CartButton />
       <button
         type="button"
-        className="hover:outline-accent ml-[1.375rem] rounded-full hover:outline hover:outline-2 hover:-outline-offset-2 lg:ml-[2.875rem]"
+        className={twJoin(
+          'ml-[1.375rem] rounded-full lg:ml-[2.875rem]',
+          'hover:outline-accent hover:outline hover:outline-2 hover:-outline-offset-2',
+          'focus:outline-accent focus:outline focus:outline-2 focus:-outline-offset-2',
+        )}
       >
         <img
           className="aspect-square w-6 lg:w-[3.125rem]"
