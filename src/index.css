@@ -13,6 +13,8 @@
 
     --fill-base: 219, 9%, 45%;
     --fill-active: 220, 13%, 13%;
+
+    --border: 0, 0%, 0%, 0.1;
   }
 
   body {

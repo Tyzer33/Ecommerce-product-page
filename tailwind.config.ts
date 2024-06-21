@@ -22,6 +22,9 @@ export default {
       borderWidth: {
         1: '1px',
       },
+      borderColor: {
+        main: 'hsla(var(--border))',
+      },
     },
   },
   plugins: [],
