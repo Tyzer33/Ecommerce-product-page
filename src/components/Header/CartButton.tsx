@@ -12,7 +12,7 @@ function CartButton() {
       className={twJoin(
         'relative ml-auto',
         active ? 'fill-active' : 'fill-base',
-        'hover:fill-active',
+        'hover:fill-active focus:fill-active focus:outline-none',
       )}
       onClick={() => console.log('toggle cart')}
       aria-label="Toggle cart"
