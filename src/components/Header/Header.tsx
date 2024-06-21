@@ -9,7 +9,7 @@ function Header() {
   const { isBelowLg, isAboveLg } = useBreakpoint('lg')
 
   return (
-    <header className="lg:border-main lg:border-b-1 flex items-center px-6 pb-6 pt-5">
+    <header className="lg:border-main lg:border-b-1 flex items-center px-6 pb-6 pt-5 lg:pb-[2.125rem] lg:pt-7">
       {isBelowLg && <NavMenuButton />}
       <img src={logo} alt="Company logo" />
       {isAboveLg && <NavLinks type="header" />}
