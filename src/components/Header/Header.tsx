@@ -15,7 +15,7 @@ function Header() {
       {isAboveLg && <NavLinks type="header" />}
       <CartButton />
       <img
-        className="ml-[1.375rem] aspect-square w-6 cursor-pointer rounded-full lg:ml-[2.875rem] lg:w-[3.125rem]"
+        className="hover:outline-accent ml-[1.375rem] aspect-square w-6 cursor-pointer rounded-full hover:outline hover:outline-2 hover:-outline-offset-2 lg:ml-[2.875rem] lg:w-[3.125rem]"
         src={avatar}
         alt="User avatar"
       />
