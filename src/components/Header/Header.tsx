@@ -18,7 +18,7 @@ function Header() {
       <button
         type="button"
         className={twJoin(
-          'ml-[1.375rem] rounded-full lg:ml-[2.875rem]',
+          'ml-[1.375rem] rounded-full transition-[outline] lg:ml-[2.875rem]',
           'outline outline-2 -outline-offset-2 outline-transparent',
           'focus-visible:outline-accent hover:outline-accent',
         )}
