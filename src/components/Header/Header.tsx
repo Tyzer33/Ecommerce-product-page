@@ -14,11 +14,16 @@ function Header() {
       <img src={logo} alt="Company logo" />
       {isAboveLg && <NavLinks type="header" />}
       <CartButton />
-      <img
-        className="hover:outline-accent ml-[1.375rem] aspect-square w-6 cursor-pointer rounded-full hover:outline hover:outline-2 hover:-outline-offset-2 lg:ml-[2.875rem] lg:w-[3.125rem]"
-        src={avatar}
-        alt="User avatar"
-      />
+      <button
+        type="button"
+        className="hover:outline-accent ml-[1.375rem] rounded-full hover:outline hover:outline-2 hover:-outline-offset-2 lg:ml-[2.875rem]"
+      >
+        <img
+          className="aspect-square w-6 lg:w-[3.125rem]"
+          src={avatar}
+          alt="User avatar"
+        />
+      </button>
     </header>
   )
 }
