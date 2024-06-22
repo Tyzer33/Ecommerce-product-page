@@ -18,6 +18,6 @@
   }
 
   body {
-    @apply bg-main font-kumbh-sans text-base/[1.625rem];
+    @apply bg-main font-kumbh-sans text-base/[1.625rem] text-body;
   }
 }
