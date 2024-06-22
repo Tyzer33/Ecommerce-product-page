@@ -7,9 +7,8 @@ function NavLinks({ type }: Props) {
   return (
     <ul
       className={twJoin(
-        type === 'menu' && `space-y-[1.125rem] text-lg font-bold`,
-        type === 'header' &&
-          `relative ml-14 flex gap-8 text-[.9375rem] text-body`,
+        type === 'menu' && `space-y-[1.125rem] text-lg font-bold text-heading`,
+        type === 'header' && `relative ml-14 flex gap-8 text-[.9375rem]`,
       )}
     >
       {navLinks.map((link) => (
