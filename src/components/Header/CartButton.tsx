@@ -1,12 +1,17 @@
 import { twJoin } from 'tailwind-merge'
+import { useRef, useState } from 'react'
 import IconCart from './IconCart'
+import Cart from './Cart'
 
 function CartButton() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const itemsInCart = 0
   const active = isCartOpen || itemsInCart > 0
 
+  const buttonRef = useRef<HTMLButtonElement>(null)
+
   return (
+    <div className="cart-md:relative ml-auto">
       <button
         type="button"
         className={twJoin(
@@ -16,6 +21,7 @@ function CartButton() {
         )}
         onClick={() => setIsCartOpen((prev) => !prev)}
         aria-label="Toggle cart"
+        ref={buttonRef}
       >
         <IconCart />
         {itemsInCart > 0 && (
@@ -24,6 +30,8 @@ function CartButton() {
           </div>
         )}
       </button>
+      {isCartOpen && <Cart />}
+    </div>
   )
 }
 export default CartButton
