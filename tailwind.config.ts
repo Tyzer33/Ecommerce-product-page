@@ -17,7 +17,7 @@ export default {
         active: 'hsla(var(--fill-active))',
       },
       fontFamily: {
-        'kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
+        'Kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
       },
       outlineColor: {
         accent: 'hsla(var(--accent))',
