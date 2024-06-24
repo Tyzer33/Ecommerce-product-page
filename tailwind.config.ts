@@ -28,6 +28,9 @@ export default {
       borderColor: {
         main: 'hsla(var(--border))',
       },
+      screens: {
+        'cart-md': '500px',
+      },
     },
   },
   plugins: [],
