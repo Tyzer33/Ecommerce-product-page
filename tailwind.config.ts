@@ -22,6 +22,9 @@ export default {
       outlineColor: {
         accent: 'hsla(var(--accent))',
       },
+      margin: {
+        desktop: '4rem',
+      },
       borderWidth: {
         1: '1px',
       },
