@@ -9,7 +9,7 @@ function Cart() {
     <section
       className={twMerge(
         'mx-auto flex w-screen max-w-[22.5rem] flex-col overflow-hidden rounded-xl bg-main shadow-2xl',
-        'absolute',
+        'absolute z-50',
         'left-0 right-0 top-[4.75rem]',
         'cart-md:left-auto cart-md:right-0 cart-md:top-[3.375rem]',
         'lg:left-1/2 lg:top-[3.125rem] lg:-translate-x-1/2',
