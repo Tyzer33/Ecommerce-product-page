@@ -5,19 +5,19 @@ import { cycleArray } from '../../utils/functions'
 
 function ProductImages() {
   const { images } = product
-  const [selectedImage, setSelectedImage] = useState(images[0].url)
+  const [selectedImage, setSelectedImage] = useState(images[0])
 
   function cycleImages(direction: 'prev' | 'next') {
-    const index = images.findIndex(({ url }) => url === selectedImage)
+    const index = images.findIndex(({ id }) => id === selectedImage.id)
     const newImage = cycleArray(images, index, direction)
-    setSelectedImage(newImage.url)
+    setSelectedImage(newImage)
   }
 
   return (
     <div className="relative bg-black">
       <img
         className="m-auto aspect-[375/300] max-h-[31.25rem] object-cover"
-        src={selectedImage}
+        src={selectedImage.url}
         alt="Selected"
       />
       <ProductImagesNavButton
