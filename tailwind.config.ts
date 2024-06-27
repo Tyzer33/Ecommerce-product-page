@@ -7,6 +7,10 @@ export default {
       backgroundColor: {
         main: 'hsla(var(--background))',
         accent: 'hsla(var(--accent))',
+        thumbnail: {
+          hover: 'hsla(var(--thumbnail-hover))',
+          active: 'hsla(var(--thumbnail-active))',
+        },
       },
       textColor: {
         body: 'hsla(var(--txt-body))',

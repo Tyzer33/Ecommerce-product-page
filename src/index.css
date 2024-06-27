@@ -15,6 +15,9 @@
     --fill-active: 220, 13%, 13%;
 
     --border: 0, 0%, 0%, 0.1;
+
+    --thumbnail-active: 0, 0%, 100%, 0.75;
+    --thumbnail-hover: 0, 0%, 100%, 0.5;
   }
 
   body {
