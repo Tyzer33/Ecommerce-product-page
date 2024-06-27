@@ -35,7 +35,7 @@ const breakpoints = fullConfig?.theme?.screens || {
 function useBreakpoint<K extends keyof typeof breakpoints>(breakpointKey: K) {
   const breakpointValue = breakpoints[breakpointKey as keyof typeof breakpoints]
   const bool = useMediaQuery({
-    query: `(max-width: ${breakpointValue})`,
+    query: `(min-width: ${breakpointValue})`,
   })
   const capitalizedKey =
     breakpointKey[0].toUpperCase() + breakpointKey.substring(1)
@@ -45,8 +45,8 @@ function useBreakpoint<K extends keyof typeof breakpoints>(breakpointKey: K) {
 
   return {
     [breakpointKey]: Number(String(breakpointValue).replace(/[^0-9]/g, '')),
-    [`isAbove${capitalizedKey}`]: !bool,
-    [`isBelow${capitalizedKey}`]: bool,
+    [`isAbove${capitalizedKey}`]: bool,
+    [`isBelow${capitalizedKey}`]: !bool,
   } as Record<K, number> & Record<KeyAbove | KeyBelow, boolean>
 }
 
