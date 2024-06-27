@@ -27,6 +27,9 @@ export default {
       outlineColor: {
         accent: 'hsla(var(--accent))',
       },
+      ringColor: {
+        accent: 'hsla(var(--accent))',
+      },
       margin: {
         desktop: '4rem',
       },
