@@ -13,14 +13,22 @@ function TextContent() {
       <div>
         <p>
           {price * discount}
+
           <span>{discount * 100}%</span>
         </p>
         <span>{price}</span>
       </div>
       <div>
-        <button type="button">-</button>
+        <button
+          type="button"
+          onClick={() => setCount((prev) => (prev > 0 ? prev - 1 : 0))}
+        >
+          -
+        </button>
         <span>{count}</span>
-        <button type="button">+</button>
+        <button type="button" onClick={() => setCount((prev) => prev + 1)}>
+          +
+        </button>
       </div>
       <button type="button">add to cart</button>
     </section>
