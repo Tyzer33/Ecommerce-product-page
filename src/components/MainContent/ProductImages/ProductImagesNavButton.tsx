@@ -1,6 +1,6 @@
 import { twJoin } from 'tailwind-merge'
-import iconNext from '../../assets/icon-next.svg'
-import iconPrev from '../../assets/icon-previous.svg'
+import iconNext from '../../../assets/icon-next.svg'
+import iconPrev from '../../../assets/icon-previous.svg'
 
 function ProductImagesNavButton({ type, handleClick }: Props) {
   const icon = type === 'prev' ? iconPrev : iconNext

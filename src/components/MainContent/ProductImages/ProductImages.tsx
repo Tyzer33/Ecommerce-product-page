@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { twJoin } from 'tailwind-merge'
-import product from '../../data/products'
+import product from '../../../data/products'
 import ProductImagesNavButton from './ProductImagesNavButton'
-import { cycleArray } from '../../utils/functions'
-import useBreakpoint from '../../utils/useBreakpoint'
+import { cycleArray } from '../../../utils/functions'
+import useBreakpoint from '../../../utils/useBreakpoint'
 
 function ProductImages() {
   const { images } = product
