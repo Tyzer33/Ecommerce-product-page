@@ -21,6 +21,7 @@ function NavMenu({ closeMenu }: Props) {
           className="block"
           type="button"
           onClick={closeMenu}
+          aria-label="Close menu"
         >
           <img src={iconClose} alt="Icon close" />
         </button>
