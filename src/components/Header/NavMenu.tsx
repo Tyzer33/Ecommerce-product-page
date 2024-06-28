@@ -17,7 +17,11 @@ function NavMenu({ closeMenu }: Props) {
   return (
     <div className="fixed inset-0 bg-black/50">
       <section className="absolute inset-0 right-auto w-60 space-y-12 bg-main p-6">
-        <button type="button" onClick={closeMenu}>
+        <button
+          className="block"
+          type="button"
+          onClick={closeMenu}
+        >
           <img src={iconClose} alt="Icon close" />
         </button>
         <NavLinks type="menu" />
