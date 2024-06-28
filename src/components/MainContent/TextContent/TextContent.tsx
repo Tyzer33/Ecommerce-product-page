@@ -29,11 +29,16 @@ function TextContent() {
         <button
           type="button"
           onClick={() => setCount((prev) => (prev > 0 ? prev - 1 : 0))}
+          aria-label="minus"
         >
           <IconMinus />
         </button>
         <span>{count}</span>
-        <button type="button" onClick={() => setCount((prev) => prev + 1)}>
+        <button
+          type="button"
+          onClick={() => setCount((prev) => prev + 1)}
+          aria-label="plus"
+        >
           <IconPlus />
         </button>
       </div>
