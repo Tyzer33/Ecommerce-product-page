@@ -14,18 +14,24 @@ function TextContent() {
   const { brand, name, desc, price, discount } = product
 
   return (
-    <section>
+    <section className="m-6">
       <h2>{brand}</h2>
-      <h1>{name}</h1>
+      <h1 className="mb-4 mt-3">{name}</h1>
       <p>{desc}</p>
-      <div>
-        <div>
-          <span>{formatter.format(price * discount)}</span>
-          <span>{discount * 100}%</span>
+      <div className="my-6 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <span className="text-[1.75rem] font-bold tracking-[0.035em] text-heading">
+            {formatter.format(price * discount)}
+          </span>
+          <span className="text-badge bg-badge rounded-md px-[.625rem] py-1 text-base font-bold">
+            {discount * 100}%
+          </span>
         </div>
-        <span>{formatter.format(price)}</span>
+        <span className="font-bold tracking-[0.02em] line-through">
+          {formatter.format(price)}
+        </span>
       </div>
-      <div>
+      <div className="bg-alt flex h-14 w-full items-center justify-between rounded-[.625rem] px-6 text-base font-bold text-heading">
         <button
           type="button"
           onClick={() => setCount((prev) => (prev > 0 ? prev - 1 : 0))}
@@ -42,8 +48,12 @@ function TextContent() {
           <IconPlus />
         </button>
       </div>
-      <button type="button">
-        <IconCart /> Add to cart
+      <button
+        type="button"
+        className="mt-4 flex h-14 w-full items-center justify-center gap-4 rounded-[.625rem] bg-accent fill-base font-bold text-heading"
+      >
+        <IconCart />
+        Add to cart
       </button>
     </section>
   )
