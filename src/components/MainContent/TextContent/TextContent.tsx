@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import product from '../../../data/products'
 
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})
+
 function TextContent() {
   const [count, setCount] = useState(0)
   const { brand, name, desc, price, discount } = product
@@ -12,11 +17,10 @@ function TextContent() {
       <p>{desc}</p>
       <div>
         <p>
-          {price * discount}
-
+          {formatter.format(price * discount)}
           <span>{discount * 100}%</span>
         </p>
-        <span>{price}</span>
+        <span>{formatter.format(price)}</span>
       </div>
       <div>
         <button
