@@ -16,10 +16,10 @@ function TextContent() {
       <h1>{name}</h1>
       <p>{desc}</p>
       <div>
-        <p>
-          {formatter.format(price * discount)}
+        <div>
+          <span>{formatter.format(price * discount)}</span>
           <span>{discount * 100}%</span>
-        </p>
+        </div>
         <span>{formatter.format(price)}</span>
       </div>
       <div>
