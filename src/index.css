@@ -5,13 +5,18 @@
 @layer base {
   :root {
     --background: 0, 0%, 100%;
+    --bg-alt: 223, 64%, 98%;
+    --bg-badge: 220, 13%, 13%;
+
     --accent: 26, 100%, 55%;
     --lightbox-background: 0, 0%, 0%, 0.75;
 
     --txt-body: 219, 9%, 45%;
     --txt-heading: 220, 13%, 13%;
+    --txt-badge: 0, 0%, 100%;
 
-    --fill-base: 219, 9%, 45%;
+    --fill-base: 220, 13%, 13%;
+    --fill-idle: 219, 9%, 45%;
     --fill-active: 220, 13%, 13%;
 
     --border: 0, 0%, 0%, 0.1;
@@ -22,7 +27,27 @@
     --button-hover: 25, 100%, 94%, 0.42;
   }
 
+  html {
+    @apply text-base;
+  }
+
   body {
-    @apply font-Kumbh-sans bg-main text-base/[1.625rem] text-body;
+    @apply bg-main font-Kumbh-sans text-[.9375rem]/[1.5625rem] text-body lg:text-base/[1.625rem];
+  }
+
+  h1 {
+    @apply text-[1.75rem]/[2rem] font-bold text-heading;
+  }
+
+  h2 {
+    @apply text-xs font-bold uppercase tracking-[0.15em] text-body;
+  }
+
+  img {
+    @apply text-base;
+  }
+
+  div#root {
+    @apply m-auto max-w-[69.375rem];
   }
 }

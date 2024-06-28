@@ -7,6 +7,8 @@ export default {
       backgroundColor: {
         main: 'hsla(var(--background))',
         accent: 'hsla(var(--accent))',
+        alt: 'hsla(var(--bg-alt))',
+        badge: 'hsla(var(--bg-badge))',
         thumbnail: {
           hover: 'hsla(var(--thumbnail-hover))',
           active: 'hsla(var(--thumbnail-active))',
@@ -16,9 +18,11 @@ export default {
       textColor: {
         body: 'hsla(var(--txt-body))',
         heading: 'hsla(var(--txt-heading))',
+        badge: 'hsla(var(--txt-badge))',
       },
       fill: {
         base: 'hsla(var(--fill-base))',
+        idle: 'hsla(var(--fill-idle))',
         active: 'hsla(var(--fill-active))',
       },
       fontFamily: {
