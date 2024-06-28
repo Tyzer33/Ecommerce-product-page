@@ -16,7 +16,7 @@ function CartButton() {
         type="button"
         className={twJoin(
           'block transition-colors',
-          active ? 'fill-active' : 'fill-base',
+          active ? 'fill-active' : 'fill-idle',
           'hover:fill-active focus:outline-none focus-visible:fill-active',
         )}
         onClick={() => setIsCartOpen((prev) => !prev)}
