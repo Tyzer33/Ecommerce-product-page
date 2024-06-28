@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import product from '../../../data/products'
+import IconCart from '../../common/IconCart'
+import IconPlus from './IconPlus'
+import IconMinus from './IconMinus'
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -27,14 +30,16 @@ function TextContent() {
           type="button"
           onClick={() => setCount((prev) => (prev > 0 ? prev - 1 : 0))}
         >
-          -
+          <IconMinus />
         </button>
         <span>{count}</span>
         <button type="button" onClick={() => setCount((prev) => prev + 1)}>
-          +
+          <IconPlus />
         </button>
       </div>
-      <button type="button">add to cart</button>
+      <button type="button">
+        <IconCart /> Add to cart
+      </button>
     </section>
   )
 }
