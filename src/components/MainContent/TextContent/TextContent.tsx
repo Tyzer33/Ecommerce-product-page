@@ -31,30 +31,32 @@ function TextContent() {
           {formatter.format(price)}
         </span>
       </div>
-      <div className="bg-alt flex h-14 w-full items-center justify-between rounded-[.625rem] px-6 text-base font-bold text-heading">
+      <div className="space-y-4">
+        <div className="bg-alt flex h-14 w-full items-center justify-between rounded-[.625rem] px-6 text-base font-bold text-heading">
+          <button
+            type="button"
+            onClick={() => setCount((prev) => (prev > 0 ? prev - 1 : 0))}
+            aria-label="minus"
+          >
+            <IconMinus />
+          </button>
+          <span>{count}</span>
+          <button
+            type="button"
+            onClick={() => setCount((prev) => prev + 1)}
+            aria-label="plus"
+          >
+            <IconPlus />
+          </button>
+        </div>
         <button
           type="button"
-          onClick={() => setCount((prev) => (prev > 0 ? prev - 1 : 0))}
-          aria-label="minus"
+          className="flex h-14 w-full items-center justify-center gap-4 rounded-[.625rem] bg-accent fill-base font-bold text-heading"
         >
-          <IconMinus />
-        </button>
-        <span>{count}</span>
-        <button
-          type="button"
-          onClick={() => setCount((prev) => prev + 1)}
-          aria-label="plus"
-        >
-          <IconPlus />
+          <IconCart />
+          Add to cart
         </button>
       </div>
-      <button
-        type="button"
-        className="mt-4 flex h-14 w-full items-center justify-center gap-4 rounded-[.625rem] bg-accent fill-base font-bold text-heading"
-      >
-        <IconCart />
-        Add to cart
-      </button>
     </section>
   )
 }
