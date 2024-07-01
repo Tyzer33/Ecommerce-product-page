@@ -1,9 +1,9 @@
 import product from '../data/products'
 
-type Image = (typeof product.images)[number]
+type ImageObj = (typeof product.images)[number]
 
 export type ProductImagesProps = {
-  images: Image[]
-  selectedImage: Image
-  setSelectedImage: React.Dispatch<React.SetStateAction<Image>>
+  images: ImageObj[]
+  selectedImage: ImageObj
+  setSelectedImage: React.Dispatch<React.SetStateAction<ImageObj>>
 }
