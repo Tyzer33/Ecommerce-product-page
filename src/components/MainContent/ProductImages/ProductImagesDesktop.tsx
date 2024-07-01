@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
-import { ProductImagesProps } from '../../../@types/types'
 import ProductThumbnails from './ProductThumbnails'
+import { useProductImagesContext } from '../../../utils/useCustomContext'
 
-function ProductImagesDesktop({
-  images,
-  selectedImage,
-  setSelectedImage,
-}: ProductImagesProps) {
+function ProductImagesDesktop() {
+  const { selectedImage } = useProductImagesContext()
   const [isLightBoxOpen, setIsLightBoxOpen] = useState(false)
 
   return (
@@ -20,11 +17,7 @@ function ProductImagesDesktop({
         >
           <img src={selectedImage.url} alt="Selected" />
         </button>
-        <ProductThumbnails
-          images={images}
-          selectedImage={selectedImage}
-          setSelectedImage={setSelectedImage}
-        />
+        <ProductThumbnails />
       </div>
       {isLightBoxOpen &&
         createPortal(<div>Lightbox Gallery</div>, document.body)}

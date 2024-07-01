@@ -7,3 +7,9 @@ export type ProductImagesProps = {
   selectedImage: ImageObj
   setSelectedImage: React.Dispatch<React.SetStateAction<ImageObj>>
 }
+
+export type ProductImagesContextType = {
+  selectedImage: ImageObj
+  setSelectedImage: React.Dispatch<React.SetStateAction<ImageObj>>
+  cycleImages: (direction: 'prev' | 'next') => void
+}

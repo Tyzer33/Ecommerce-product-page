@@ -1,17 +1,8 @@
-import { ProductImagesProps } from '../../../@types/types'
-import { cycleArray } from '../../../utils/functions'
+import { useProductImagesContext } from '../../../utils/useCustomContext'
 import ProductImagesNavButton from './ProductImagesNavButton'
 
-function ProductImagesMobile({
-  images,
-  selectedImage,
-  setSelectedImage,
-}: ProductImagesProps) {
-  function cycleImages(direction: 'prev' | 'next') {
-    const index = images.findIndex(({ id }) => id === selectedImage.id)
-    const newImage = cycleArray(images, index, direction)
-    setSelectedImage(newImage)
-  }
+function ProductImagesMobile() {
+  const { selectedImage, cycleImages } = useProductImagesContext()
 
   return (
     <div className="relative bg-black">
