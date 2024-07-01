@@ -14,6 +14,7 @@ export default {
           active: 'hsla(var(--thumbnail-active))',
         },
         'button-hover': 'hsla(var(--button-hover))',
+        lightbox: 'hsla(var(--bg-lightbox))',
       },
       textColor: {
         body: 'hsla(var(--txt-body))',

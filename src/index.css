@@ -7,9 +7,9 @@
     --background: 0, 0%, 100%;
     --bg-alt: 223, 64%, 98%;
     --bg-badge: 220, 13%, 13%;
+    --bg-lightbox: 0, 0%, 0%, 0.75;
 
     --accent: 26, 100%, 55%;
-    --lightbox-background: 0, 0%, 0%, 0.75;
 
     --txt-body: 219, 9%, 45%;
     --txt-heading: 220, 13%, 13%;
