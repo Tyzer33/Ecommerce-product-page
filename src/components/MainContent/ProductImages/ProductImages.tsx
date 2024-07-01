@@ -17,7 +17,7 @@ function ProductImages() {
   }
 
   return (
-    <div className="relative max-lg:bg-black lg:max-w-[27.8125rem] lg:space-y-8">
+    <div className="relative max-lg:bg-black lg:max-w-[27.8125rem] lg:flex-1 lg:space-y-8">
       <img
         className="m-auto max-h-[31.25rem] object-cover max-lg:aspect-[375/300] lg:rounded-2xl"
         src={selectedImage.url}
@@ -44,7 +44,7 @@ function ProductImages() {
                 'relative aspect-square w-[5.5rem] overflow-hidden rounded-[.625rem] transition-[box-shadow] focus-visible:outline-none',
                 'after:absolute after:inset-0 after:transition-colors',
                 selectedImage.id === image.id
-                  ? 'ring-accent after:bg-thumbnail-active ring-2'
+                  ? 'ring-2 ring-accent after:bg-thumbnail-active'
                   : 'hover:after:bg-thumbnail-hover focus-visible:after:bg-thumbnail-hover',
               )}
               type="button"
