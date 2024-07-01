@@ -1,7 +1,11 @@
 import { twJoin } from 'tailwind-merge'
-import product from '../../../data/products'
+import { ProductImagesProps } from '../../../@types/types'
 
-function ProductThumbnails({ images, selectedImage, setSelectedImage }: Props) {
+function ProductThumbnails({
+  images,
+  selectedImage,
+  setSelectedImage,
+}: ProductImagesProps) {
   return (
     <div className="flex justify-between">
       {images.map((image) => (
@@ -25,11 +29,3 @@ function ProductThumbnails({ images, selectedImage, setSelectedImage }: Props) {
   )
 }
 export default ProductThumbnails
-
-type Image = (typeof product.images)[number]
-
-type Props = {
-  images: Image[]
-  selectedImage: Image
-  setSelectedImage: React.Dispatch<React.SetStateAction<Image>>
-}
