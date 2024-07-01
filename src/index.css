@@ -48,6 +48,6 @@
   }
 
   div#root {
-    @apply mx-desktop max-w-[69.375rem];
+    @apply max-w-[69.375rem] lg:mx-desktop;
   }
 }
