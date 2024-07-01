@@ -36,11 +36,11 @@
   }
 
   h1 {
-    @apply text-[1.75rem]/[2rem] font-bold text-heading;
+    @apply text-[1.75rem]/[2rem] font-bold text-heading lg:text-[2.75rem]/[3rem];
   }
 
   h2 {
-    @apply text-xs font-bold uppercase tracking-[0.15em] text-body;
+    @apply text-xs font-bold uppercase tracking-[0.15em] text-body lg:text-[.8125rem];
   }
 
   img {
