@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { twJoin } from 'tailwind-merge'
 import product from '../../../data/products'
 import ProductImagesNavButton from './ProductImagesNavButton'
 import { cycleArray } from '../../../utils/functions'
 import useBreakpoint from '../../../utils/useBreakpoint'
+import ProductThumbnails from './ProductThumbnails'
 
 function ProductImages() {
   const { images } = product
@@ -36,28 +36,11 @@ function ProductImages() {
         </>
       )}
       {isAboveLg && (
-        <div className="flex justify-between">
-          {images.map((image) => (
-            <button
-              key={image.id}
-              className={twJoin(
-                'relative aspect-square w-[5.5rem] overflow-hidden rounded-[.625rem] transition-[box-shadow] focus-visible:outline-none',
-                'after:absolute after:inset-0 after:transition-colors',
-                selectedImage.id === image.id
-                  ? 'ring-2 ring-accent after:bg-thumbnail-active'
-                  : 'hover:after:bg-thumbnail-hover focus-visible:after:bg-thumbnail-hover',
-              )}
-              type="button"
-              onClick={() => setSelectedImage(image)}
-              aria-label={`Select image ${image.id}`}
-            >
-              <img
-                src={image.thumbnailUrl}
-                alt={`Product Thumbnail ${image.id}`}
-              />
-            </button>
-          ))}
-        </div>
+        <ProductThumbnails
+          images={images}
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
       )}
     </div>
   )
