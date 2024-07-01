@@ -33,5 +33,11 @@ module.exports = {
         devDependencies: true,
       },
     ],
+    'react/require-default-props': [
+      'error',
+      {
+        functions: 'defaultArguments',
+      },
+    ],
   },
 }
