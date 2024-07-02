@@ -11,12 +11,12 @@ function CartButton() {
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <div className="cart-md:relative ml-auto">
+    <div className="ml-auto cart-md:relative">
       <button
         type="button"
         className={twJoin(
           'block transition-colors',
-          active ? 'fill-active' : 'fill-idle',
+          active ? 'fill-active' : 'fill-current',
           'hover:fill-active focus:outline-none focus-visible:fill-active',
         )}
         onClick={() => setIsCartOpen((prev) => !prev)}

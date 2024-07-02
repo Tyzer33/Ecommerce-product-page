@@ -22,9 +22,10 @@ export default {
         badge: 'hsla(var(--txt-badge))',
       },
       fill: {
-        base: 'hsla(var(--fill-base))',
-        idle: 'hsla(var(--fill-idle))',
-        active: 'hsla(var(--fill-active))',
+        accent: 'hsla(var(--accent))',
+        'accent-hover': 'hsla(var(--svg-accent-hover))',
+        active: 'hsla(var(--svg-active))',
+        alt: 'hsla(var(--svg-alt))',
       },
       fontFamily: {
         'Kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
