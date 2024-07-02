@@ -27,6 +27,12 @@ export default {
         active: 'hsla(var(--svg-active))',
         alt: 'hsla(var(--svg-alt))',
       },
+      stroke: {
+        accent: 'hsla(var(--accent))',
+        'accent-hover': 'hsla(var(--svg-accent-hover))',
+        active: 'hsla(var(--svg-active))',
+        alt: 'hsla(var(--svg-alt))',
+      },
       fontFamily: {
         'Kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
       },
