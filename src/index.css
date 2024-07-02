@@ -24,7 +24,7 @@
     --thumbnail-active: 0, 0%, 100%, 0.75;
     --thumbnail-hover: 0, 0%, 100%, 0.5;
 
-    --button-hover: 25, 100%, 94%, 0.42;
+    --accent-hover: 26, 100%, 71%;
   }
 
   html {

@@ -13,7 +13,7 @@ export default {
           hover: 'hsla(var(--thumbnail-hover))',
           active: 'hsla(var(--thumbnail-active))',
         },
-        'button-hover': 'hsla(var(--button-hover))',
+        'accent-hover': 'hsla(var(--accent-hover))',
         lightbox: 'hsla(var(--bg-lightbox))',
       },
       textColor: {
