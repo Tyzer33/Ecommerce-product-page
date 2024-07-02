@@ -1,7 +1,7 @@
 import useBreakpoint from '../../../utils/useBreakpoint'
 import ProductImagesMobile from './ProductImagesMobile'
 import ProductImagesDesktop from './ProductImagesDesktop'
-import ProductImagesProvider from '../../../context/ProductImagesProvider'
+import ProductImagesProvider from '../../../context/ProductImagesContext/ProductImagesProvider'
 
 function ProductImages() {
   const { isAboveLg, isBelowLg } = useBreakpoint('lg')

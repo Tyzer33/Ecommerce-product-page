@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { ProductImagesContextType } from '../@types/types'
+import { ProductImagesContextType } from '../../@types/types'
 
 const ProductImagesContext = createContext<ProductImagesContextType | null>(
   null,

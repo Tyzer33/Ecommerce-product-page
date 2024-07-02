@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import { useContext } from 'react'
-import ProductImagesContext from '../context/ProductImagesContext'
+import ProductImagesContext from '../context/ProductImagesContext/ProductImagesContext'
 import { ProductImagesContextType } from '../@types/types'
 
 export function useProductImagesContext() {
