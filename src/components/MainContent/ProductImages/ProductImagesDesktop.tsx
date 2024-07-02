@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import ProductThumbnails from './ProductThumbnails'
+import LightBoxGallery from './LightboxGallery'
 import { useProductImagesContext } from '../../../utils/useCustomContext'
 
 function ProductImagesDesktop() {
@@ -20,7 +21,10 @@ function ProductImagesDesktop() {
         <ProductThumbnails />
       </div>
       {isLightBoxOpen &&
-        createPortal(<div>Lightbox Gallery</div>, document.body)}
+        createPortal(
+          <LightBoxGallery closeLightBox={() => setIsLightBoxOpen(false)} />,
+          document.body,
+        )}
     </>
   )
 }

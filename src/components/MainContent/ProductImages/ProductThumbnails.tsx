@@ -2,12 +2,12 @@ import { twJoin } from 'tailwind-merge'
 import product from '../../../data/products'
 import { useProductImagesContext } from '../../../utils/useCustomContext'
 
-function ProductThumbnails() {
+function ProductThumbnails({ className = '' }: Props) {
   const { setSelectedImage, selectedImage } = useProductImagesContext()
   const { images } = product
 
   return (
-    <div className="flex justify-between">
+    <div className={twJoin('flex justify-between', className)}>
       {images.map((image) => (
         <button
           key={image.id}
@@ -29,3 +29,7 @@ function ProductThumbnails() {
   )
 }
 export default ProductThumbnails
+
+type Props = {
+  className?: string
+}
