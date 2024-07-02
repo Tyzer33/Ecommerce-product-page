@@ -2,7 +2,7 @@ import { useProductImagesContext } from '../../../utils/useCustomContext'
 import ProductImagesNavButton from './ProductImagesNavButton'
 
 function ProductImagesMobile() {
-  const { selectedImage, cycleImages } = useProductImagesContext()
+  const { selectedImage } = useProductImagesContext()
 
   return (
     <div className="relative bg-black">
@@ -11,14 +11,8 @@ function ProductImagesMobile() {
         src={selectedImage.url}
         alt="Selected"
       />
-      <ProductImagesNavButton
-        type="prev"
-        handleClick={() => cycleImages('prev')}
-      />
-      <ProductImagesNavButton
-        type="next"
-        handleClick={() => cycleImages('next')}
-      />
+      <ProductImagesNavButton displayContext="mobile" direction="prev" />
+      <ProductImagesNavButton displayContext="mobile" direction="next" />
     </div>
   )
 }

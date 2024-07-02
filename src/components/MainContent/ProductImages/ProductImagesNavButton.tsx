@@ -1,26 +1,37 @@
 import { twJoin } from 'tailwind-merge'
-import iconNext from '../../../assets/icon-next.svg'
-import iconPrev from '../../../assets/icon-previous.svg'
+import { useProductImagesContext } from '../../../utils/useCustomContext'
+import { IconNext, IconPrev } from './IconsArrows'
 
-function ProductImagesNavButton({ type, handleClick }: Props) {
-  const icon = type === 'prev' ? iconPrev : iconNext
+function ProductImagesNavButton({ displayContext, direction }: Props) {
+  const { cycleImages } = useProductImagesContext()
+  const isPrev = direction === 'prev'
+  const isNext = direction === 'next'
+  const isMobile = displayContext === 'mobile'
+  const isLightbox = displayContext === 'lightbox'
 
   return (
     <button
-      className={twJoin(
-        'absolute top-1/2 aspect-square w-10 -translate-y-1/2 rounded-full bg-main bg-center bg-no-repeat',
-        type === 'prev' ? 'left-4' : 'right-4',
-      )}
-      style={{ backgroundImage: `url(${icon})` }}
       type="button"
-      onClick={handleClick}
-      aria-label="Previous image"
-    />
+      className={twJoin(
+        'absolute top-1/2 flex aspect-square -translate-y-1/2 items-center justify-center rounded-full bg-main stroke-current text-heading hover:stroke-accent',
+        isMobile && 'w-10',
+        isLightbox && 'w-14',
+        isMobile && isPrev && 'left-4',
+        isMobile && isNext && 'right-4',
+        isLightbox && isPrev && 'left-0 -translate-x-1/2',
+        isLightbox && isNext && 'right-0 translate-x-1/2',
+      )}
+      onClick={() => cycleImages(direction)}
+      aria-label={`${isPrev ? 'Previous' : 'Next'} image`}
+    >
+      {isPrev && <IconPrev displayContext={displayContext} />}
+      {isNext && <IconNext displayContext={displayContext} />}
+    </button>
   )
 }
 export default ProductImagesNavButton
 
 type Props = {
-  type: 'prev' | 'next'
-  handleClick: () => void
+  displayContext: 'mobile' | 'lightbox'
+  direction: 'prev' | 'next'
 }
