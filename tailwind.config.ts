@@ -23,13 +23,13 @@ export default {
       },
       fill: {
         accent: 'hsla(var(--accent))',
-        'accent-hover': 'hsla(var(--svg-accent-hover))',
+        'accent-hover': 'hsla(var(--accent-hover))',
         active: 'hsla(var(--svg-active))',
         alt: 'hsla(var(--svg-alt))',
       },
       stroke: {
         accent: 'hsla(var(--accent))',
-        'accent-hover': 'hsla(var(--svg-accent-hover))',
+        'accent-hover': 'hsla(var(--accent-hover))',
         active: 'hsla(var(--svg-active))',
         alt: 'hsla(var(--svg-alt))',
       },
