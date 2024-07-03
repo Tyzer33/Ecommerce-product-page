@@ -21,4 +21,5 @@ export type CartContextType = {
   cart: CartItem[]
   addToCart: (productRef: string, quantity: number) => void
   removeFromCart: (productRef: string) => void
+  isCartEmpty: boolean
 }
