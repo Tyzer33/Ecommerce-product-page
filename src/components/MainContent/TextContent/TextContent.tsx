@@ -1,4 +1,4 @@
-import AddToCart from './AddToCart'
+import AddButton from './AddButton'
 import Counter from './Counter'
 import Price from './Price'
 import Text from './Text'
@@ -10,7 +10,7 @@ function TextContent() {
       <Price />
       <div className="flex gap-4 max-lg:flex-col">
         <Counter />
-        <AddToCart />
+        <AddButton />
       </div>
     </section>
   )

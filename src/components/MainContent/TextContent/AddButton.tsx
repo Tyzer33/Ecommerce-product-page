@@ -1,6 +1,6 @@
 import IconCart from '../../common/IconCart'
 
-function AddToCart() {
+function AddButton() {
   return (
     <button
       type="button"
@@ -11,4 +11,4 @@ function AddToCart() {
     </button>
   )
 }
-export default AddToCart
+export default AddButton
