@@ -1,9 +1,10 @@
 import { twMerge } from 'tailwind-merge'
 import iconDelete from '../../assets/icon-delete.svg'
 import productImage from '../../assets/image-product-1-thumbnail.jpg'
+import { useCartContext } from '../../../utils/useCustomContext'
 
 function Cart() {
-  const empty = true
+  const { cart, isCartEmpty } = useCartContext()
 
   return (
     <section
@@ -18,7 +19,7 @@ function Cart() {
       <header className="border-b-1 border-main p-6 pt-4 font-bold text-heading">
         Cart
       </header>
-      {empty ? (
+      {isCartEmpty ? (
         <div className="flex min-h-[11.75rem] items-center justify-center font-bold">
           Your cart is empty.
         </div>
