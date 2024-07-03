@@ -13,3 +13,5 @@ export type ProductImagesContextType = {
   setSelectedImage: React.Dispatch<React.SetStateAction<ImageObj>>
   cycleImages: (direction: 'prev' | 'next') => void
 }
+
+export type CartContextType = {}
