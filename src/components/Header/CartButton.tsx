@@ -30,7 +30,9 @@ function CartButton() {
           </div>
         )}
       </button>
-      {isCartOpen && <Cart />}
+      {isCartOpen && (
+        <Cart buttonRef={buttonRef} closeCart={() => setIsCartOpen(false)} />
+      )}
     </div>
   )
 }

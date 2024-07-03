@@ -1,9 +1,29 @@
 import { twMerge } from 'tailwind-merge'
+import { useEffect, useRef } from 'react'
 import { useCartContext } from '../../../utils/useCustomContext'
 import CartItem from './CartItem'
 
-function Cart() {
+function Cart({ buttonRef, closeCart }: Props) {
   const { cart, isCartEmpty } = useCartContext()
+  const cartRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleExternalClick(e: MouseEvent) {
+      const cartSection = cartRef.current as HTMLDivElement
+      const cartButton = buttonRef.current as HTMLButtonElement
+      const target = e.target as HTMLElement
+
+      if (cartButton.contains(target)) return
+      if (cartSection.contains(target)) return
+      closeCart()
+    }
+
+    window.addEventListener('click', handleExternalClick)
+
+    return () => {
+      window.removeEventListener('click', handleExternalClick)
+    }
+  }, [closeCart, buttonRef])
 
   return (
     <section
@@ -14,6 +34,7 @@ function Cart() {
         'cart-md:left-auto cart-md:right-0 cart-md:top-[3.375rem]',
         'lg:left-1/2 lg:top-[3.125rem] lg:-translate-x-1/2',
       )}
+      ref={cartRef}
     >
       <header className="border-b-1 border-main p-6 pt-4 font-bold text-heading">
         Cart
@@ -35,3 +56,8 @@ function Cart() {
   )
 }
 export default Cart
+
+type Props = {
+  buttonRef: React.RefObject<HTMLButtonElement>
+  closeCart: () => void
+}
