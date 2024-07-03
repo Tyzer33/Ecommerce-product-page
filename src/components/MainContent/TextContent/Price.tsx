@@ -1,9 +1,5 @@
 import product from '../../../data/products'
-
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-})
+import formatter from '../../../utils/formatter'
 
 function Price() {
   const { price, discount } = product
