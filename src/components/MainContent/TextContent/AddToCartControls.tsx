@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import AddButton from '../TextContent/AddButton'
-import Counter from '../TextContent/Counter'
+import AddButton from './AddButton'
+import Counter from './Counter'
 
 function AddToCartControls() {
   const [quantity, setQuantity] = useState(0)
