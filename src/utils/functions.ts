@@ -1,4 +1,5 @@
-// eslint-disable-next-line import/prefer-default-export
+import { CartItem } from '../@types/types'
+
 export function cycleArray<T extends unknown[]>(
   array: T,
   currentIndex: number,
@@ -8,4 +9,14 @@ export function cycleArray<T extends unknown[]>(
   if (newIndex < 0) return array[array.length - 1]
   if (newIndex >= array.length) return array[0]
   return array[newIndex]
+}
+
+export function replaceCartItem(cart: CartItem[], index: number, qty: number) {
+  return cart.map((item, i) => {
+    if (index === i) {
+      return { ...item, quantity: item.quantity + qty }
+    }
+
+    return item
+  })
 }

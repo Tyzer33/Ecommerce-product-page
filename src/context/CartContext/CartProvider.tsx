@@ -1,8 +1,33 @@
-import { useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import CartContext from './CartContext'
+import { CartItem } from '../../@types/types'
+import { replaceCartItem } from '../../utils/functions'
 
 function CartProvider({ children }: Props) {
-  const value = useMemo(() => ({}), [])
+  const [cart, setCart] = useState<CartItem[]>([])
+
+  const addToCart = useCallback(
+    (productRef: string, quantity: number) => {
+      if (quantity === 0) return
+
+      const findIndex = cart.findIndex((item) => item.productRef === productRef)
+
+      if (findIndex === -1) {
+        setCart((prev) => [...prev, { productRef, quantity }])
+        return
+      }
+
+      setCart((prev) => replaceCartItem(prev, findIndex, quantity))
+    },
+    [cart],
+  )
+
+  const removeFromCart = useCallback((productRef: string) => {}, [])
+
+  const value = useMemo(
+    () => ({ cart, addToCart, removeFromCart }),
+    [cart, addToCart, removeFromCart],
+  )
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>
 }

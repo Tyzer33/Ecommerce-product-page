@@ -8,6 +8,7 @@ import image4 from '../assets/image-product-4.jpg'
 import thumbnail4 from '../assets/image-product-4-thumbnail.jpg'
 
 const product = {
+  ref: '553560-093',
   name: 'Fall Limited Edition Sneakers',
   brand: 'Sneaker Company',
   desc: 'These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',

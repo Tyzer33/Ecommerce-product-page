@@ -1,12 +1,8 @@
 import product from '../data/products'
 
-type ImageObj = (typeof product.images)[number]
+/* ProductImagesContext */
 
-export type ProductImagesProps = {
-  images: ImageObj[]
-  selectedImage: ImageObj
-  setSelectedImage: React.Dispatch<React.SetStateAction<ImageObj>>
-}
+type ImageObj = (typeof product.images)[number]
 
 export type ProductImagesContextType = {
   selectedImage: ImageObj
@@ -14,4 +10,15 @@ export type ProductImagesContextType = {
   cycleImages: (direction: 'prev' | 'next') => void
 }
 
-export type CartContextType = {}
+/* CartContext */
+
+export type CartItem = {
+  productRef: string
+  quantity: number
+}
+
+export type CartContextType = {
+  cart: CartItem[]
+  addToCart: (productRef: string, quantity: number) => void
+  removeFromCart: (productRef: string) => void
+}
