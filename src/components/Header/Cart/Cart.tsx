@@ -23,7 +23,13 @@ function Cart() {
           Your cart is empty.
         </div>
       ) : (
-        <CartItem />
+        cart.map(({ productRef, quantity }) => (
+          <CartItem
+            key={productRef}
+            productRef={productRef}
+            quantity={quantity}
+          />
+        ))
       )}
     </section>
   )

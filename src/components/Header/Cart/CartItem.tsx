@@ -1,25 +1,30 @@
 import iconDelete from '../../../assets/icon-delete.svg'
-import productImage from '../../../assets/image-product-1-thumbnail.jpg'
+import { useCartContext } from '../../../utils/useCustomContext'
+import product from '../../../data/products'
+import formatter from '../../../utils/formatter'
 
-function CartItem() {
+function CartItem({ productRef, quantity }: Props) {
+  const { removeFromCart } = useCartContext()
+  const { name, price, discount, images } = product
+
   return (
     <div className="space-y-[1.625rem] p-6 pb-8">
       <div className="flex items-center gap-4">
         <img
           className="aspect-square h-[3.125rem] rounded-[.25rem]"
-          src={productImage}
-          alt="Product"
+          src={images[0].thumbnailUrl}
+          alt={name}
         />
         <div className="flex-1">
-          <p>Fall Limited Edition Sneakers</p>
+          <p>{name}</p>
           <div className="flex gap-[.375rem]">
-            <p>$125.00 x 3</p>
-            <p className="font-bold text-heading">$375.00</p>
+            <p>{`${formatter.format(price * discount)} x ${quantity}`}</p>
+            <p className="font-bold text-heading">{`${formatter.format(price * discount * quantity)}`}</p>
           </div>
         </div>
         <button
           type="button"
-          onClick={() => console.log('Delete')}
+          onClick={() => removeFromCart(productRef)}
           aria-label="delete"
         >
           <img src={iconDelete} alt="Delete Icon" />
@@ -36,3 +41,8 @@ function CartItem() {
   )
 }
 export default CartItem
+
+type Props = {
+  productRef: string
+  quantity: number
+}
