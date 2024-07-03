@@ -22,7 +22,9 @@ function CartProvider({ children }: Props) {
     [cart],
   )
 
-  const removeFromCart = useCallback((productRef: string) => {}, [])
+  const removeFromCart = useCallback((productRef: string) => {
+    setCart((prev) => prev.filter((item) => item.productRef !== productRef))
+  }, [])
 
   const value = useMemo(
     () => ({ cart, addToCart, removeFromCart, isCartEmpty: cart.length === 0 }),
