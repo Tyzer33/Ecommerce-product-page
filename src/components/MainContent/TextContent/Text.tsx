@@ -1,4 +1,4 @@
-import product from '../../../data/products'
+import product from '@/data/products'
 
 function Text() {
   const { brand, name, desc } = product

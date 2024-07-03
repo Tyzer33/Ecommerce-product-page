@@ -1,4 +1,4 @@
-import { CartItem } from '../@types/types'
+import { CartItem } from '@/types/types'
 
 export function cycleArray<T extends unknown[]>(
   array: T,

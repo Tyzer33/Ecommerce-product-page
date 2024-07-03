@@ -1,5 +1,5 @@
 import { twJoin } from 'tailwind-merge'
-import avatar from '../../assets/image-avatar.png'
+import avatar from '@/assets/image-avatar.png'
 
 function UserAvatarButton() {
   return (
@@ -8,7 +8,7 @@ function UserAvatarButton() {
       className={twJoin(
         'ml-[1.375rem] rounded-full transition-[outline] lg:ml-[2.875rem]',
         'outline outline-2 -outline-offset-2 outline-transparent',
-        'focus-visible:outline-accent hover:outline-accent',
+        'hover:outline-accent focus-visible:outline-accent',
       )}
     >
       <img

@@ -1,4 +1,4 @@
-import { useProductImagesContext } from '../../../utils/useCustomContext'
+import { useProductImagesContext } from '@/utils/useCustomContext'
 import IconClose from './IconClose'
 import ProductImagesNavButton from './ProductImagesNavButton'
 import ProductThumbnails from './ProductThumbnails'

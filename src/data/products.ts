@@ -1,11 +1,11 @@
-import image1 from '../assets/image-product-1.jpg'
-import thumbnail1 from '../assets/image-product-1-thumbnail.jpg'
-import image2 from '../assets/image-product-2.jpg'
-import thumbnail2 from '../assets/image-product-2-thumbnail.jpg'
-import image3 from '../assets/image-product-3.jpg'
-import thumbnail3 from '../assets/image-product-3-thumbnail.jpg'
-import image4 from '../assets/image-product-4.jpg'
-import thumbnail4 from '../assets/image-product-4-thumbnail.jpg'
+import image1 from '@/assets/image-product-1.jpg'
+import thumbnail1 from '@/assets/image-product-1-thumbnail.jpg'
+import image2 from '@/assets/image-product-2.jpg'
+import thumbnail2 from '@/assets/image-product-2-thumbnail.jpg'
+import image3 from '@/assets/image-product-3.jpg'
+import thumbnail3 from '@/assets/image-product-3-thumbnail.jpg'
+import image4 from '@/assets/image-product-4.jpg'
+import thumbnail4 from '@/assets/image-product-4-thumbnail.jpg'
 
 const product = {
   ref: '553560-093',

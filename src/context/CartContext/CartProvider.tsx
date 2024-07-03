@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import CartContext from './CartContext'
-import { CartItem } from '../../@types/types'
-import { replaceCartItem } from '../../utils/functions'
+import { CartItem } from '@/types/types'
+import { replaceCartItem } from '@/utils/functions'
 
 function CartProvider({ children }: Props) {
   const [cart, setCart] = useState<CartItem[]>([])

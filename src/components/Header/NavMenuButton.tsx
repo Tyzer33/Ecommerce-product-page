@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
-import iconMenu from '../../assets/icon-menu.svg'
+import iconMenu from '@/assets/icon-menu.svg'
 import NavMenu from './NavMenu'
 
 function NavMenuButton() {

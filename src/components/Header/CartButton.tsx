@@ -1,6 +1,6 @@
 import { twJoin } from 'tailwind-merge'
 import { useRef, useState } from 'react'
-import IconCart from '../common/IconCart'
+import IconCart from '@/components/common/IconCart'
 import Cart from './Cart/Cart'
 
 function CartButton() {

@@ -1,7 +1,7 @@
-import iconDelete from '../../../assets/icon-delete.svg'
-import { useCartContext } from '../../../utils/useCustomContext'
-import product from '../../../data/products'
-import formatter from '../../../utils/formatter'
+import iconDelete from '@/assets/icon-delete.svg'
+import { useCartContext } from '@/utils/useCustomContext'
+import product from '@/data/products'
+import formatter from '@/utils/formatter'
 
 function CartItem({ productRef, quantity }: Props) {
   const { removeFromCart } = useCartContext()

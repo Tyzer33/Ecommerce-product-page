@@ -39,5 +39,6 @@ module.exports = {
         functions: 'defaultArguments',
       },
     ],
+    'import/extensions': [0, 'never'],
   },
 }

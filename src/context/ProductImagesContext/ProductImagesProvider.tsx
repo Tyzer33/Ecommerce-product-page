@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import ProductImagesContext from './ProductImagesContext'
-import product from '../../data/products'
-import { cycleArray } from '../../utils/functions'
+import product from '@/data/products'
+import { cycleArray } from '@/utils/functions'
 
 function ProductImagesProvider({ children }: Props) {
   const { images } = product

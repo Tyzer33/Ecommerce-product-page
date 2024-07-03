@@ -1,7 +1,7 @@
-import logo from '../../assets/logo.svg'
+import logo from '@/assets/logo.svg'
 import NavMenuButton from './NavMenuButton'
 import CartButton from './CartButton'
-import useBreakpoint from '../../utils/useBreakpoint'
+import useBreakpoint from '@/utils/useBreakpoint'
 import NavLinks from './NavLinks'
 import UserAvatarButton from './UserAvatarButton'
 

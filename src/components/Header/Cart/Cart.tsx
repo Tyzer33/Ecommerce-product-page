@@ -1,6 +1,6 @@
 import { twMerge } from 'tailwind-merge'
 import { useEffect, useRef } from 'react'
-import { useCartContext } from '../../../utils/useCustomContext'
+import { useCartContext } from '@/utils/useCustomContext'
 import CartItem from './CartItem'
 
 function Cart({ buttonRef, closeCart }: Props) {

@@ -1,5 +1,5 @@
-import product from '../../../data/products'
-import formatter from '../../../utils/formatter'
+import product from '@/data/products'
+import formatter from '@/utils/formatter'
 
 function Price() {
   const { price, discount } = product

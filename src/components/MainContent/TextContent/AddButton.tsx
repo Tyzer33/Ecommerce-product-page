@@ -1,5 +1,5 @@
-import { useCartContext } from '../../../utils/useCustomContext'
-import IconCart from '../../common/IconCart'
+import { useCartContext } from '@/utils/useCustomContext'
+import IconCart from '@/components/common/IconCart'
 
 function AddButton({ quantity }: Props) {
   const { addToCart } = useCartContext()

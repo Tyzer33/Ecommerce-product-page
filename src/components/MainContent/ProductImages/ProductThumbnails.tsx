@@ -1,6 +1,6 @@
 import { twJoin } from 'tailwind-merge'
-import product from '../../../data/products'
-import { useProductImagesContext } from '../../../utils/useCustomContext'
+import product from '@/data/products'
+import { useProductImagesContext } from '@/utils/useCustomContext'
 
 function ProductThumbnails({ className = '' }: Props) {
   const { setSelectedImage, selectedImage } = useProductImagesContext()

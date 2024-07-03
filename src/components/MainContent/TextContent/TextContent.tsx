@@ -1,4 +1,4 @@
-import AddToCartControls from '../ProductImages/AddToCartControls'
+import AddToCartControls from './AddToCartControls'
 import Price from './Price'
 import Text from './Text'
 

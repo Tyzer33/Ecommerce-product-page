@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import iconClose from '../../assets/icon-close.svg'
+import iconClose from '@/assets/icon-close.svg'
 import NavLinks from './NavLinks'
 
 function NavMenu({ closeMenu }: Props) {

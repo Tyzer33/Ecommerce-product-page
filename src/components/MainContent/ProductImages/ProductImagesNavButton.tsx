@@ -1,5 +1,5 @@
 import { twJoin } from 'tailwind-merge'
-import { useProductImagesContext } from '../../../utils/useCustomContext'
+import { useProductImagesContext } from '@/utils/useCustomContext'
 import { IconNext, IconPrev } from './IconsArrows'
 
 function ProductImagesNavButton({ displayContext, direction }: Props) {

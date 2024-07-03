@@ -1,4 +1,4 @@
-import { useProductImagesContext } from '../../../utils/useCustomContext'
+import { useProductImagesContext } from '@/utils/useCustomContext'
 import ProductImagesNavButton from './ProductImagesNavButton'
 
 function ProductImagesMobile() {

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import ProductThumbnails from './ProductThumbnails'
 import LightBoxGallery from './LightboxGallery'
-import { useProductImagesContext } from '../../../utils/useCustomContext'
+import { useProductImagesContext } from '@/utils/useCustomContext'
 
 function ProductImagesDesktop() {
   const { selectedImage } = useProductImagesContext()
