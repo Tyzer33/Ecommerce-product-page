@@ -15,7 +15,7 @@ function CartButton() {
       <button
         type="button"
         className={twJoin(
-          'block transition-colors',
+          'expand-click-sm block transition-colors',
           active ? 'fill-active' : 'fill-current',
           'hover:fill-active focus:outline-none focus-visible:fill-active',
         )}
