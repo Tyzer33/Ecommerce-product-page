@@ -1,4 +1,6 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
+import { CSSRuleObject } from 'tailwindcss/types/config'
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -54,7 +56,65 @@ export default {
       screens: {
         'cart-md': '500px',
       },
+      expandClickArea: {
+        xs: '0.125rem',
+        sm: '0.25rem',
+        md: '0.5rem',
+        lg: '1rem',
+        xl: '1.5rem',
+      },
     },
   },
-  plugins: [],
+
+  plugins: [
+    plugin(({ matchUtilities, theme }) => {
+      const newUtilities: Parameters<typeof matchUtilities>[0] = {
+        'expand-click': (value) => {
+          return {
+            position: 'relative',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              zIndex: '5',
+              top: `-${value}`,
+              right: `-${value}`,
+              bottom: `-${value}`,
+              left: `-${value}`,
+            },
+          }
+        },
+      }
+
+      const properties = {
+        t: ['marginTop'],
+        b: ['marginBottom'],
+        l: ['marginLeft'],
+        r: ['marginRight'],
+        x: ['marginLeft', 'marginRight'],
+        y: ['marginTop', 'marginBottom'],
+      }
+
+      Object.entries(properties).forEach(([name, property]) => {
+        newUtilities[`expand-click-${name}`] = (value) => {
+          const before: CSSRuleObject = {
+            content: '""',
+            position: 'absolute',
+            inset: '0',
+            zIndex: '5',
+          }
+
+          property.forEach((prop) => {
+            before[prop] = `-${value}`
+          })
+
+          return { position: 'relative', '&::before': before }
+        }
+      })
+
+      matchUtilities(newUtilities, {
+        values: theme('expandClickArea'),
+        type: ['length', 'percentage'],
+      })
+    }),
+  ],
 } satisfies Config
