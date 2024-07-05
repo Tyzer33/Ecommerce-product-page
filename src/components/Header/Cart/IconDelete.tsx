@@ -12,7 +12,7 @@ function IconDelete() {
           id="a"
         />
       </defs>
-      <use fill="#C3CAD9" fillRule="nonzero" xlinkHref="#a" />
+      <use fillRule="nonzero" xlinkHref="#a" />
     </svg>
   )
 }
