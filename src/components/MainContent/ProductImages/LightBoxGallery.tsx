@@ -1,9 +1,19 @@
+import { useEffect } from 'react'
 import { useProductImagesContext } from '@/utils/useCustomContext'
 import IconClose from './IconClose'
 import ProductImagesNavButton from './ProductImagesNavButton'
 import ProductThumbnails from './ProductThumbnails'
 
 function LightBoxGallery({ closeLightBox }: Props) {
+  useEffect(() => {
+    const divRoot = document.getElementById('root')
+    divRoot?.setAttribute('inert', 'true')
+
+    return () => {
+      divRoot?.removeAttribute('inert')
+    }
+  }, [])
+
   const { selectedImage } = useProductImagesContext()
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-lightbox">
