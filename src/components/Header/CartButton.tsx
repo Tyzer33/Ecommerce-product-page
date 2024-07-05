@@ -2,10 +2,11 @@ import { twJoin } from 'tailwind-merge'
 import { useRef, useState } from 'react'
 import IconCart from '@/components/common/IconCart'
 import Cart from './Cart/Cart'
+import { useCartContext } from '@/utils/useCustomContext'
 
 function CartButton() {
   const [isCartOpen, setIsCartOpen] = useState(false)
-  const itemsInCart = 0
+  const { itemsInCart } = useCartContext()
 
   const buttonRef = useRef<HTMLButtonElement>(null)
 
