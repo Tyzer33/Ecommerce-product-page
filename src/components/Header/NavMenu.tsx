@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import iconClose from '@/assets/icon-close.svg'
 import NavLinks from './NavLinks'
+import IconClose from '../MainContent/ProductImages/IconClose'
 
 function NavMenu({ closeMenu }: Props) {
   useEffect(() => {
@@ -18,12 +18,12 @@ function NavMenu({ closeMenu }: Props) {
     <div className="fixed inset-0 bg-black/50">
       <section className="absolute inset-0 right-auto w-60 space-y-12 bg-main p-6">
         <button
-          className="block"
+          className="block fill-current"
           type="button"
           onClick={closeMenu}
           aria-label="Close menu"
         >
-          <img src={iconClose} alt="Icon close" />
+          <IconClose size="small" />
         </button>
         <NavLinks type="menu" />
       </section>
