@@ -44,13 +44,22 @@ function Cart({ buttonRef, closeCart }: Props) {
           Your cart is empty.
         </div>
       ) : (
-        cart.map(({ productRef, quantity }) => (
-          <CartItem
-            key={productRef}
-            productRef={productRef}
-            quantity={quantity}
-          />
-        ))
+        <div className="space-y-[1.625rem] p-6 pb-8">
+          {cart.map(({ productRef, quantity }) => (
+            <CartItem
+              key={productRef}
+              productRef={productRef}
+              quantity={quantity}
+            />
+          ))}
+          <button
+            type="button"
+            className="h-14 w-full rounded-[.625rem] bg-accent font-bold text-heading"
+            onClick={() => console.log('Checkout')}
+          >
+            Checkout
+          </button>
+        </div>
       )}
     </section>
   )
