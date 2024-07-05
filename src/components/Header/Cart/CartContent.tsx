@@ -1,5 +1,6 @@
 import { useCartContext } from '@/utils/useCustomContext'
 import CartItem from './CartItem'
+import Button from '@/components/common/Button'
 
 function CartContent() {
   const { cart, isCartEmpty } = useCartContext()
@@ -21,13 +22,7 @@ function CartContent() {
           quantity={quantity}
         />
       ))}
-      <button
-        type="button"
-        className="h-14 w-full rounded-[.625rem] bg-accent font-bold text-heading"
-        onClick={() => console.log('Checkout')}
-      >
-        Checkout
-      </button>
+      <Button handleClick={() => console.log('Checkout')}>Checkout</Button>
     </div>
   )
 }
