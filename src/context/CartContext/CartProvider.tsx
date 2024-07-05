@@ -27,7 +27,13 @@ function CartProvider({ children }: Props) {
   }, [])
 
   const value = useMemo(
-    () => ({ cart, addToCart, removeFromCart, isCartEmpty: cart.length === 0 }),
+    () => ({
+      cart,
+      addToCart,
+      removeFromCart,
+      isCartEmpty: cart.length === 0,
+      itemsInCart: cart.reduce((acc, item) => acc + item.quantity, 0),
+    }),
     [cart, addToCart, removeFromCart],
   )
 
