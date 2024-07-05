@@ -1,7 +1,7 @@
-import iconDelete from '@/assets/icon-delete.svg'
 import { useCartContext } from '@/utils/useCustomContext'
 import product from '@/data/products'
 import formatter from '@/utils/formatter'
+import IconDelete from './IconDelete'
 
 function CartItem({ productRef, quantity }: Props) {
   const { removeFromCart } = useCartContext()
@@ -26,7 +26,7 @@ function CartItem({ productRef, quantity }: Props) {
         onClick={() => removeFromCart(productRef)}
         aria-label="delete"
       >
-        <img src={iconDelete} alt="Delete Icon" />
+        <IconDelete />
       </button>
     </div>
   )
