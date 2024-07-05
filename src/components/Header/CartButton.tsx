@@ -6,7 +6,6 @@ import Cart from './Cart/Cart'
 function CartButton() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const itemsInCart = 0
-  const active = isCartOpen || itemsInCart > 0
 
   const buttonRef = useRef<HTMLButtonElement>(null)
 
@@ -16,7 +15,7 @@ function CartButton() {
         type="button"
         className={twJoin(
           'expand-click-sm block transition-colors',
-          active ? 'fill-active' : 'fill-current',
+          isCartOpen ? 'fill-active' : 'fill-current',
           'hover:fill-active focus:outline-none focus-visible:fill-active',
         )}
         onClick={() => setIsCartOpen((prev) => !prev)}
