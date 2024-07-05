@@ -15,8 +15,7 @@ function CartButton() {
       <button
         type="button"
         className={twJoin(
-          'expand-click-sm block transition-colors',
-          isCartOpen ? 'fill-active' : 'fill-current',
+          'expand-click-sm block fill-current transition-colors',
           'hover:fill-active focus:outline-none focus-visible:fill-active',
         )}
         onClick={() => setIsCartOpen((prev) => !prev)}
