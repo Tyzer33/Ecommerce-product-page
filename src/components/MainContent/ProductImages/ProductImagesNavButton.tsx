@@ -13,7 +13,8 @@ function ProductImagesNavButton({ displayContext, direction }: Props) {
     <button
       type="button"
       className={twJoin(
-        'absolute top-1/2 flex aspect-square -translate-y-1/2 items-center justify-center rounded-full bg-main stroke-current text-heading hover:stroke-accent',
+        'absolute top-1/2 flex aspect-square -translate-y-1/2 items-center justify-center rounded-full bg-main stroke-current text-heading transition-colors',
+        'focus-within:stroke-accent focus-within:outline-none hover:stroke-accent',
         isMobile && 'w-10',
         isLightbox && 'w-14',
         isMobile && isPrev && 'left-4',
