@@ -20,16 +20,3 @@ export function replaceCartItem(cart: CartItem[], index: number, qty: number) {
     return item
   })
 }
-
-export function getRootVariable(name: string) {
-  return getComputedStyle(document.documentElement).getPropertyValue(name)
-}
-
-export function msStringToNum(str: `${number}ms`) {
-  return Number(str.replace('ms', ''))
-}
-
-export function isMsString(str: string): str is `${number}ms` {
-  const regex = /^\d+ms$/
-  return regex.test(str)
-}
