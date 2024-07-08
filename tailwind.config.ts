@@ -63,9 +63,29 @@ export default {
         lg: '1rem',
         xl: '1.5rem',
       },
+      animation: {
+        'slide-in-l': 'slide-in-l var(--menu-animation-duration) ease-out',
+        'slide-out-l':
+          'slide-out-l var(--menu-animation-duration) ease-out forwards',
+        'fade-in': 'fade-in var(--menu-animation-duration) ease-out',
+        'fade-out': 'fade-out var(--menu-animation-duration) ease-out forwards',
+      },
+      keyframes: {
+        'slide-in-l': {
+          '0%': { transform: 'translateX(-100%)' },
+        },
+        'slide-out-l': {
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        'fade-in': {
+          '0%': { backgroundColor: 'transparent' },
+        },
+        'fade-out': {
+          '100%': { backgroundColor: 'transparent' },
+        },
+      },
     },
   },
-
   plugins: [
     plugin(({ matchUtilities, theme }) => {
       const newUtilities: Parameters<typeof matchUtilities>[0] = {
