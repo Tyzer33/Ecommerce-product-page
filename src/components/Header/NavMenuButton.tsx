@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
+import { AnimatePresence } from 'framer-motion'
 import NavMenu from './NavMenu'
 import IconMenu from './IconMenu'
 
@@ -16,11 +17,16 @@ function NavMenuButton() {
       >
         <IconMenu />
       </button>
-      {isMenuOpen &&
-        createPortal(
-          <NavMenu closeMenu={() => setIsMenuOpen(false)} />,
-          document.body,
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            {createPortal(
+              <NavMenu closeMenu={() => setIsMenuOpen(false)} />,
+              document.body,
+            )}
+          </>
         )}
+      </AnimatePresence>
     </>
   )
 }

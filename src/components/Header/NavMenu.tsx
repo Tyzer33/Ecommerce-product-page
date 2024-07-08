@@ -1,11 +1,13 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
+import { motion } from 'framer-motion'
 import NavLinks from './NavLinks'
 import IconClose from '../MainContent/ProductImages/IconClose'
-import { getRootVariable, isMsString, msStringToNum } from '@/utils/functions'
 
 function NavMenu({ closeMenu }: Props) {
-  const wrapperRef = useRef<HTMLDivElement>(null)
-  const menuRef = useRef<HTMLDivElement>(null)
+  const defaultTransition = {
+    type: 'linear',
+    duration: 0.3,
+  }
 
   useEffect(() => {
     const root = document.querySelector('#root') as HTMLElement
@@ -18,32 +20,32 @@ function NavMenu({ closeMenu }: Props) {
     }
   }, [])
 
-  function animateClose() {
-    const durationStr = getRootVariable('--menu-animation-duration')
-    const durationNum = isMsString(durationStr) ? msStringToNum(durationStr) : 0
-
-    wrapperRef.current?.classList.add('animate-fade-out')
-    menuRef.current?.classList.add('animate-slide-out-l')
-    setTimeout(closeMenu, durationNum)
-  }
-
   return (
-    <div ref={wrapperRef} className="animate-fade-in fixed inset-0 bg-black/50">
-      <section
-        ref={menuRef}
-        className="animate-slide-in-l absolute inset-0 right-auto w-60 space-y-12 bg-main p-6"
+    <motion.div
+      initial={{ backgroundColor: 'hsla(0,0,0,0)' }}
+      animate={{ backgroundColor: 'hsla(0,0,0,0.75)' }}
+      exit={{ backgroundColor: 'hsla(0,0,0,0)' }}
+      transition={defaultTransition}
+      className="fixed inset-0 bg-black/50"
+    >
+      <motion.section
+        initial={{ x: '-100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '-100%' }}
+        transition={defaultTransition}
+        className="absolute inset-0 right-auto w-60 space-y-12 bg-main p-6"
       >
         <button
           className="block fill-current"
           type="button"
-          onClick={animateClose}
+          onClick={closeMenu}
           aria-label="Close menu"
         >
           <IconClose size="small" />
         </button>
         <NavLinks type="menu" />
-      </section>
-    </div>
+      </motion.section>
+    </motion.div>
   )
 }
 export default NavMenu
