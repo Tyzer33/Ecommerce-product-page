@@ -29,6 +29,9 @@
     /* Others */
     --accent: 26, 100%, 55%;
     --accent-hover: 26, 100%, 71%;
+
+    /* Transitions */
+    --menu-animation-duration: 150ms;
   }
 
   html {
