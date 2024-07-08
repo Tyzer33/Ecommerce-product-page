@@ -1,5 +1,6 @@
 import { twJoin } from 'tailwind-merge'
 import { useRef, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import IconCart from '@/components/common/IconCart'
 import Cart from './Cart/Cart'
 import { useCartContext } from '@/utils/useCustomContext'
@@ -15,7 +16,7 @@ function CartButton() {
       <button
         type="button"
         className={twJoin(
-          'expand-click-sm block fill-current transition-colors',
+          'block fill-current transition-colors expand-click-sm',
           'hover:fill-active focus:outline-none focus-visible:fill-active',
         )}
         onClick={() => setIsCartOpen((prev) => !prev)}
@@ -29,9 +30,11 @@ function CartButton() {
           </div>
         )}
       </button>
-      {isCartOpen && (
-        <Cart buttonRef={buttonRef} closeCart={() => setIsCartOpen(false)} />
-      )}
+      <AnimatePresence>
+        {isCartOpen && (
+          <Cart buttonRef={buttonRef} closeCart={() => setIsCartOpen(false)} />
+        )}
+      </AnimatePresence>
     </div>
   )
 }

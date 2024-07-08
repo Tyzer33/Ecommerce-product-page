@@ -1,5 +1,6 @@
 import { twMerge } from 'tailwind-merge'
 import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import CartContent from './CartContent'
 
 function Cart({ buttonRef, closeCart }: Props) {
@@ -24,7 +25,10 @@ function Cart({ buttonRef, closeCart }: Props) {
   }, [closeCart, buttonRef])
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       className={twMerge(
         'mx-auto flex w-screen max-w-[22.5rem] flex-col overflow-hidden rounded-xl bg-main shadow-2xl',
         'absolute z-50',
@@ -38,7 +42,7 @@ function Cart({ buttonRef, closeCart }: Props) {
         Cart
       </header>
       <CartContent />
-    </section>
+    </motion.section>
   )
 }
 export default Cart
