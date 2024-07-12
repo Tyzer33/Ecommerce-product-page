@@ -18,22 +18,22 @@ const product = {
     {
       id: 1,
       url: image1,
-      thumbnailUrl: thumbnail1,
+      thumbUrl: thumbnail1,
     },
     {
       id: 2,
       url: image2,
-      thumbnailUrl: thumbnail2,
+      thumbUrl: thumbnail2,
     },
     {
       id: 3,
       url: image3,
-      thumbnailUrl: thumbnail3,
+      thumbUrl: thumbnail3,
     },
     {
       id: 4,
       url: image4,
-      thumbnailUrl: thumbnail4,
+      thumbUrl: thumbnail4,
     },
   ],
 }

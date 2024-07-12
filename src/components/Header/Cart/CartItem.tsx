@@ -11,7 +11,7 @@ function CartItem({ productRef, quantity }: Props) {
     <div className="flex items-center gap-4">
       <img
         className="aspect-square h-[3.125rem] rounded-[.25rem]"
-        src={images[0].thumbnailUrl}
+        src={images[0].thumbUrl}
         alt={name}
       />
       <div className="flex-1">

@@ -8,7 +8,7 @@ function ProductThumbnails({ className = '' }: Props) {
 
   return (
     <div className={twJoin('flex justify-between', className)}>
-      {images.map(({ id, thumbnailUrl }, index) => (
+      {images.map(({ id, thumbUrl }, index) => (
         <button
           key={id}
           className={twJoin(
@@ -22,7 +22,7 @@ function ProductThumbnails({ className = '' }: Props) {
           onClick={() => setSelectedIndex(index)}
           aria-label={`Select image ${id}`}
         >
-          <img src={thumbnailUrl} alt={`Product Thumbnail ${id}`} />
+          <img src={thumbUrl} alt={`Product Thumbnail ${id}`} />
         </button>
       ))}
     </div>
