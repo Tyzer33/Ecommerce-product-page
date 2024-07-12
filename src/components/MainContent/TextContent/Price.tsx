@@ -1,9 +1,9 @@
 import product from '@/data/products'
 import formatter from '@/utils/formatter'
 
-function Price() {
-  const { price, discount } = product
+const { price, discount } = product
 
+function Price() {
   return (
     <div className="my-6 max-lg:flex max-lg:items-center max-lg:justify-between lg:mb-8 lg:space-y-3">
       <div className="flex items-end gap-4">

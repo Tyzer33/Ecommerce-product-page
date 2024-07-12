@@ -3,9 +3,10 @@ import product from '@/data/products'
 import formatter from '@/utils/formatter'
 import IconDelete from './IconDelete'
 
+const { name, price, discount, images } = product
+
 function CartItem({ productRef, quantity }: Props) {
   const { removeFromCart } = useCartContext()
-  const { name, price, discount, images } = product
 
   return (
     <div className="flex items-center gap-4">

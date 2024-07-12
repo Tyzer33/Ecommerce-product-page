@@ -1,8 +1,8 @@
 import product from '@/data/products'
 
-function Text() {
-  const { brand, name, desc } = product
+const { brand, name, desc } = product
 
+function Text() {
   return (
     <>
       <h2>{brand}</h2>
