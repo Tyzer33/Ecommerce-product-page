@@ -9,13 +9,13 @@ function ProductImagesProvider({ children }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const prevImage = useCallback(
-    () => prevIndex(images, selectedIndex),
-    [selectedIndex],
+    () => setSelectedIndex((prev) => prevIndex(images, prev)),
+    [],
   )
 
   const nextImage = useCallback(
-    () => nextIndex(images, selectedIndex),
-    [selectedIndex],
+    () => setSelectedIndex((prev) => nextIndex(images, prev)),
+    [],
   )
 
   const value = useMemo(
