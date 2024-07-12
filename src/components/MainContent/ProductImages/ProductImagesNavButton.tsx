@@ -3,7 +3,7 @@ import { useProductImagesContext } from '@/utils/useCustomContext'
 import { IconNext, IconPrev } from './IconsArrows'
 
 function ProductImagesNavButton({ displayContext, direction }: Props) {
-  const { cycleImages } = useProductImagesContext()
+  const { prevImage, nextImage } = useProductImagesContext()
   const isPrev = direction === 'prev'
   const isNext = direction === 'next'
   const isMobile = displayContext === 'mobile'
@@ -22,7 +22,7 @@ function ProductImagesNavButton({ displayContext, direction }: Props) {
         isLightbox && isPrev && 'left-0 -translate-x-1/2',
         isLightbox && isNext && 'right-0 translate-x-1/2',
       )}
-      onClick={() => cycleImages(direction)}
+      onClick={() => (direction === 'prev' ? prevImage() : nextImage())}
       aria-label={`${isPrev ? 'Previous' : 'Next'} image`}
     >
       {isPrev && <IconPrev displayContext={displayContext} />}

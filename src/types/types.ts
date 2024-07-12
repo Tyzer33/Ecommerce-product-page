@@ -1,13 +1,10 @@
-import product from '@/data/products'
-
 /* ProductImagesContext */
 
-type ImageObj = (typeof product.images)[number]
-
 export type ProductImagesContextType = {
-  selectedImage: ImageObj
-  setSelectedImage: React.Dispatch<React.SetStateAction<ImageObj>>
-  cycleImages: (direction: 'prev' | 'next') => void
+  selectedIndex: number
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>
+  prevImage: () => void
+  nextImage: () => void
 }
 
 /* CartContext */

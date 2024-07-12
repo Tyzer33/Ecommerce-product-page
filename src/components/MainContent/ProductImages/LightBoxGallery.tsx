@@ -3,8 +3,13 @@ import { useProductImagesContext } from '@/utils/useCustomContext'
 import IconClose from './IconClose'
 import ProductImagesNavButton from './ProductImagesNavButton'
 import ProductThumbnails from './ProductThumbnails'
+import product from '@/data/products'
+
+const { images } = product
 
 function LightBoxGallery({ closeLightBox }: Props) {
+  const { selectedIndex } = useProductImagesContext()
+
   useEffect(() => {
     const divRoot = document.getElementById('root')
     divRoot?.setAttribute('inert', 'true')
@@ -14,7 +19,6 @@ function LightBoxGallery({ closeLightBox }: Props) {
     }
   }, [])
 
-  const { selectedImage } = useProductImagesContext()
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-lightbox">
       <div className="flex flex-col">
@@ -29,7 +33,7 @@ function LightBoxGallery({ closeLightBox }: Props) {
         <div className="relative">
           <img
             className="mb-10 mt-[1.375rem] aspect-square w-[34.375rem] rounded-2xl"
-            src={selectedImage.url}
+            src={images[selectedIndex].url}
             alt="Selected"
           />
           <ProductImagesNavButton displayContext="lightbox" direction="prev" />

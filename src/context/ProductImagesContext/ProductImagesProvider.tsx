@@ -1,24 +1,26 @@
 import { useCallback, useMemo, useState } from 'react'
 import ProductImagesContext from './ProductImagesContext'
 import product from '@/data/products'
-import { cycleArray } from '@/utils/functions'
+import { nextIndex, prevIndex } from '@/utils/functions'
+
+const { images } = product
 
 function ProductImagesProvider({ children }: Props) {
-  const { images } = product
-  const [selectedImage, setSelectedImage] = useState(images[0])
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const cycleImages = useCallback(
-    (direction: 'prev' | 'next') => {
-      const index = images.findIndex(({ id }) => id === selectedImage.id)
-      const newImage = cycleArray(images, index, direction)
-      setSelectedImage(newImage)
-    },
-    [images, selectedImage],
+  const prevImage = useCallback(
+    () => prevIndex(images, selectedIndex),
+    [selectedIndex],
+  )
+
+  const nextImage = useCallback(
+    () => nextIndex(images, selectedIndex),
+    [selectedIndex],
   )
 
   const value = useMemo(
-    () => ({ selectedImage, setSelectedImage, cycleImages }),
-    [selectedImage, cycleImages],
+    () => ({ selectedIndex, setSelectedIndex, prevImage, nextImage }),
+    [selectedIndex, setSelectedIndex, prevImage, nextImage],
   )
 
   return (
