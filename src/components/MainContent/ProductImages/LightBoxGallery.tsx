@@ -1,15 +1,8 @@
 import { useEffect } from 'react'
-import { useProductImagesContext } from '@/utils/useCustomContext'
 import IconClose from './IconClose'
-import { CarouselPrevButton, CarouselNextButton } from './CarouselNavButton'
-import ProductThumbnails from './ProductThumbnails'
-import product from '@/data/products'
-
-const { images } = product
+import Carousel from './Carousel'
 
 function LightBoxGallery({ closeLightBox }: Props) {
-  const { selectedIndex } = useProductImagesContext()
-
   useEffect(() => {
     const divRoot = document.getElementById('root')
     divRoot?.setAttribute('inert', 'true')
@@ -30,16 +23,7 @@ function LightBoxGallery({ closeLightBox }: Props) {
         >
           <IconClose size="large" />
         </button>
-        <div className="relative">
-          <img
-            className="mb-10 mt-[1.375rem] aspect-square w-[34.375rem] rounded-2xl"
-            src={images[selectedIndex].url}
-            alt="Selected"
-          />
-          <CarouselPrevButton displayContext="lightbox" />
-          <CarouselNextButton displayContext="lightbox" />
-        </div>
-        <ProductThumbnails className="mx-[3.25rem]" />
+        <Carousel displayContext="lightbox" arrows thumbs />
       </div>
     </div>
   )
