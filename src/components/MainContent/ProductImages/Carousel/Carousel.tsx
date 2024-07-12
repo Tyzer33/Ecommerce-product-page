@@ -1,7 +1,7 @@
 import { twJoin } from 'tailwind-merge'
 import { useProductImagesContext } from '@/utils/useCustomContext'
 import { CarouselPrevButton, CarouselNextButton } from './CarouselNavButton'
-import ProductThumbnails from './ProductThumbnails'
+import ProductThumbnails from './CarouselThumbnails'
 import product from '@/data/products'
 
 const { images } = product

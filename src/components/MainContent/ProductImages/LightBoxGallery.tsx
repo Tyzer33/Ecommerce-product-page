@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import IconClose from './IconClose'
-import Carousel from './Carousel'
+import Carousel from './Carousel/Carousel'
 
 function LightBoxGallery({ closeLightBox }: Props) {
   useEffect(() => {
