@@ -16,7 +16,7 @@ function CarouselNavButton({
       type="button"
       className={twJoin(
         'absolute top-1/2 flex aspect-square -translate-y-1/2 items-center justify-center rounded-full bg-main stroke-current text-heading transition-colors',
-        'focus-within:stroke-accent focus-within:outline-none hover:stroke-accent',
+        'hover:stroke-accent focus-visible:stroke-accent focus-visible:outline-none',
         isMobile && 'w-10',
         isLightbox && 'w-14',
         className,
