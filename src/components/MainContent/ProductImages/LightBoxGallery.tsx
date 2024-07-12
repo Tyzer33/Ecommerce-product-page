@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useProductImagesContext } from '@/utils/useCustomContext'
 import IconClose from './IconClose'
-import ProductImagesNavButton from './ProductImagesNavButton'
+import { CarouselPrevButton, CarouselNextButton } from './CarouselNavButton'
 import ProductThumbnails from './ProductThumbnails'
 import product from '@/data/products'
 
@@ -36,8 +36,8 @@ function LightBoxGallery({ closeLightBox }: Props) {
             src={images[selectedIndex].url}
             alt="Selected"
           />
-          <ProductImagesNavButton displayContext="lightbox" direction="prev" />
-          <ProductImagesNavButton displayContext="lightbox" direction="next" />
+          <CarouselPrevButton displayContext="lightbox" />
+          <CarouselNextButton displayContext="lightbox" />
         </div>
         <ProductThumbnails className="mx-[3.25rem]" />
       </div>

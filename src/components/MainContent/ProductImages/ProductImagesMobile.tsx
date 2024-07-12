@@ -1,5 +1,5 @@
 import { useProductImagesContext } from '@/utils/useCustomContext'
-import ProductImagesNavButton from './ProductImagesNavButton'
+import { CarouselPrevButton, CarouselNextButton } from './CarouselNavButton'
 import product from '@/data/products'
 
 const { images } = product
@@ -14,8 +14,8 @@ function ProductImagesMobile() {
         src={images[selectedIndex].url}
         alt="Selected"
       />
-      <ProductImagesNavButton displayContext="mobile" direction="prev" />
-      <ProductImagesNavButton displayContext="mobile" direction="next" />
+      <CarouselPrevButton displayContext="mobile" />
+      <CarouselNextButton displayContext="mobile" />
     </div>
   )
 }
