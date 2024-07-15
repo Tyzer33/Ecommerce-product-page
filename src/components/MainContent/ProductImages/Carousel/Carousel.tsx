@@ -39,15 +39,27 @@ function Carousel({
         )}
         onClick={handleClick}
       >
-        <img
-          className={twJoin(
-            isDesktop && 'rounded-2xl',
-            isLightbox && 'rounded-2xl',
-            isMobile && 'm-auto aspect-[375/300] max-h-[31.25rem] object-cover',
-          )}
-          src={images[selectedIndex].url}
-          alt="Selected"
-        />
+        <div
+          className={twJoin('grid overflow-hidden', !isMobile && 'rounded-2xl')}
+          style={{ gridTemplateColumns: `repeat(${images.length}, 100%)` }}
+        >
+          {images.map(({ id, url }) => (
+            <div
+              key={id}
+              className="transition-[translate] duration-300"
+              style={{ translate: `${selectedIndex * -100}%` }}
+            >
+              <img
+                className={twJoin(
+                  isMobile &&
+                    'm-auto aspect-[375/300] max-h-[31.25rem] object-cover',
+                )}
+                src={url}
+                alt={`Product ${id}`}
+              />
+            </div>
+          ))}
+        </div>
         {arrows && (
           <>
             <CarouselPrevButton
