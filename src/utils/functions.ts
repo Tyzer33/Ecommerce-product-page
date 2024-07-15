@@ -11,9 +11,11 @@ export function replaceCartItem(cart: CartItem[], index: number, qty: number) {
 }
 
 export function prevIndex(array: unknown[], currentIndex: number) {
-  return currentIndex === 0 ? array.length - 1 : currentIndex - 1
+  if (currentIndex === 0) return array.length - 1
+  return currentIndex - 1
 }
 
 export function nextIndex(array: unknown[], currentIndex: number) {
-  return currentIndex === array.length - 1 ? 0 : currentIndex + 1
+  if (currentIndex === array.length - 1) return 0
+  return currentIndex + 1
 }
