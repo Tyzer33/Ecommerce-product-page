@@ -32,7 +32,8 @@ function Carousel({
         type={handleClick ? 'button' : undefined}
         className={twJoin(
           'relative block',
-          isButton && 'focus-visible:outline-4 focus-visible:outline-accent',
+          isButton &&
+            'focus-visible:outline focus-visible:outline-[3px] focus-visible:-outline-offset-1 focus-visible:outline-accent',
           !isMobile && 'rounded-2xl',
           isMobile && 'bg-black',
         )}
