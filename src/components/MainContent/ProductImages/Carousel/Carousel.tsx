@@ -33,8 +33,7 @@ function Carousel({
         className={twJoin(
           'relative block',
           isButton && 'focus-visible:outline-4 focus-visible:outline-accent',
-          isDesktop && 'rounded-2xl',
-          isLightbox && 'rounded-2xl',
+          !isMobile && 'rounded-2xl',
           isMobile && 'bg-black',
         )}
         onClick={handleClick}
