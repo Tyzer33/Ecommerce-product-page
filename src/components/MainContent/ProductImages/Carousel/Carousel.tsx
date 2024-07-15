@@ -43,11 +43,12 @@ function Carousel({
           className={twJoin('grid overflow-hidden', !isMobile && 'rounded-2xl')}
           style={{ gridTemplateColumns: `repeat(${images.length}, 100%)` }}
         >
-          {images.map(({ id, url }) => (
+          {images.map(({ id, url }, index) => (
             <div
               key={id}
-              className="transition-[translate] duration-300"
+              className="transition-[translate] duration-300 motion-reduce:transition-none"
               style={{ translate: `${selectedIndex * -100}%` }}
+              aria-hidden={index !== selectedIndex}
             >
               <img
                 className={twJoin(
