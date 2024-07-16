@@ -14,13 +14,14 @@ function Cart({ buttonRef, closeCart }: Props) {
 
       if (cartButton.contains(target)) return
       if (cartSection.contains(target)) return
+
       closeCart()
     }
 
-    window.addEventListener('click', handleExternalClick)
+    window.addEventListener('mousedown', handleExternalClick)
 
     return () => {
-      window.removeEventListener('click', handleExternalClick)
+      window.removeEventListener('mousedown', handleExternalClick)
     }
   }, [closeCart, buttonRef])
 
