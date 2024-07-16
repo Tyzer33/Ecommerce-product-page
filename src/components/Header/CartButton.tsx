@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import IconCart from '@/components/common/IconCart'
 import Cart from './Cart/Cart'
 import { useCartContext } from '@/utils/useCustomContext'
+import CartButtonCountBadge from './CartButtonCountBadge'
 
 function CartButton() {
   const [isCartOpen, setIsCartOpen] = useState(false)
@@ -24,11 +25,9 @@ function CartButton() {
         ref={buttonRef}
       >
         <IconCart />
-        {itemsInCart > 0 && (
-          <div className="absolute -right-[6px] -top-[6px] flex h-[.8125rem] w-[1.1875rem] items-center justify-center rounded-xl bg-accent text-[.625rem]/[.75rem] font-bold text-white">
-            {itemsInCart}
-          </div>
-        )}
+        <AnimatePresence>
+          {itemsInCart > 0 && <CartButtonCountBadge />}
+        </AnimatePresence>
       </button>
       <AnimatePresence>
         {isCartOpen && (
