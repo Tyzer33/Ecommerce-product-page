@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
+import { AnimatePresence } from 'framer-motion'
 import LightBoxGallery from './LightBoxGallery'
 import Carousel from './Carousel/Carousel'
 
@@ -13,11 +14,18 @@ function ProductImagesDesktop() {
         handleClick={() => setIsLightBoxOpen(true)}
         thumbs
       />
-      {isLightBoxOpen &&
-        createPortal(
-          <LightBoxGallery closeLightBox={() => setIsLightBoxOpen(false)} />,
-          document.body,
+      <AnimatePresence>
+        {isLightBoxOpen && (
+          <>
+            {createPortal(
+              <LightBoxGallery
+                closeLightBox={() => setIsLightBoxOpen(false)}
+              />,
+              document.body,
+            )}
+          </>
         )}
+      </AnimatePresence>
     </>
   )
 }
