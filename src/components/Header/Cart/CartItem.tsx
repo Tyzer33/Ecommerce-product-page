@@ -26,7 +26,7 @@ function CartItem({ productRef, quantity }: Props) {
         type="button"
         onClick={() => removeFromCart(productRef)}
         aria-label="delete"
-        className="fill-[#C3CAD9] transition-colors focus-within:fill-[#9ba0aa] focus-within:outline-none hover:fill-[#9ba0aa]"
+        className="fill-[#C3CAD9] transition-colors hover:fill-[#9ba0aa] focus-visible:fill-[#9ba0aa] focus-visible:outline-none"
       >
         <IconDelete />
       </button>

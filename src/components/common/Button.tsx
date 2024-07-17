@@ -6,7 +6,7 @@ function Button({ children, className = '', handleClick }: Props) {
       type="button"
       className={twMerge(
         'h-14 w-full rounded-[.625rem] bg-accent font-bold text-heading transition-colors',
-        'focus-within:bg-accent-hover focus-within:outline-none hover:bg-accent-hover',
+        'hover:bg-accent-hover focus-visible:bg-accent-hover focus-visible:outline-none',
         className,
       )}
       onClick={handleClick}

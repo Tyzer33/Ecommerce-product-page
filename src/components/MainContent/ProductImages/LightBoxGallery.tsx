@@ -17,7 +17,7 @@ function LightBoxGallery({ closeLightBox }: Props) {
       <div className="flex flex-col">
         <button
           type="button"
-          className="self-end fill-alt transition-colors expand-click-sm focus-within:fill-accent focus-within:outline-none hover:fill-accent"
+          className="self-end fill-alt transition-colors expand-click-sm hover:fill-accent focus-visible:fill-accent focus-visible:outline-none"
           onClick={closeLightBox}
           aria-label="Close Lightbox Gallery"
         >
