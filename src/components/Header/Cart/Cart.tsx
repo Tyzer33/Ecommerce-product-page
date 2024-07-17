@@ -1,10 +1,18 @@
 import { twMerge } from 'tailwind-merge'
 import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import CartContent from './CartContent'
+import useBreakpoint from '@/utils/useBreakpoint'
 
 function Cart({ buttonRef, closeCart }: Props) {
   const cartRef = useRef<HTMLDivElement>(null)
+  const shouldReduceMotion = useReducedMotion()
+  const { isAboveLg } = useBreakpoint('lg')
+
+  const variants = {
+    hidden: shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 50 },
+    visible: shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 },
+  }
 
   useEffect(() => {
     function handleExternalClick(e: MouseEvent) {
@@ -27,15 +35,17 @@ function Cart({ buttonRef, closeCart }: Props) {
 
   return (
     <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
+      style={isAboveLg ? { translateX: '-50%' } : undefined}
       className={twMerge(
         'mx-auto flex w-screen max-w-[22.5rem] flex-col overflow-hidden rounded-xl bg-main shadow-2xl',
         'absolute z-50',
         'left-0 right-0 top-[4.75rem]',
         'cart-md:left-auto cart-md:right-0 cart-md:top-[3.375rem]',
-        'lg:left-1/2 lg:top-[3.125rem] lg:-translate-x-1/2',
+        'lg:left-1/2 lg:top-[3.125rem]',
       )}
       ref={cartRef}
     >
