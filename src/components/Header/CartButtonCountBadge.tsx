@@ -1,14 +1,39 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useCartContext } from '@/utils/useCustomContext'
 
 function CartButtonCountBadge() {
   const { itemsInCart } = useCartContext()
+  const shouldReduceMotion = useReducedMotion()
+
+  const variants = {
+    hidden: shouldReduceMotion
+      ? {
+          opacity: 0,
+        }
+      : {
+          opacity: 0,
+          x: '-0.25rem',
+          y: '0.25rem',
+          scale: 0.5,
+        },
+    visible: shouldReduceMotion
+      ? {
+          opacity: 1,
+        }
+      : {
+          opacity: 1,
+          x: '0',
+          y: '0',
+          scale: 1,
+        },
+  }
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: '-0.25rem', y: '0.25rem', scale: 0.5 }}
-      animate={{ opacity: 1, x: '0', y: '0', scale: 1 }}
-      exit={{ opacity: 0, x: '-0.25rem', y: '0.25rem', scale: 0.5 }}
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
       transition={{ duration: 0.3, type: 'spring' }}
       className="absolute -right-[6px] -top-[6px] flex h-[.8125rem] w-[1.1875rem] items-center justify-center rounded-xl bg-accent text-[.625rem]/[.75rem] font-bold text-white"
     >
@@ -16,4 +41,5 @@ function CartButtonCountBadge() {
     </motion.div>
   )
 }
+
 export default CartButtonCountBadge
