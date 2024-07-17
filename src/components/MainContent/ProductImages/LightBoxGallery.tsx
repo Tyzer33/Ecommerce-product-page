@@ -13,7 +13,7 @@ function LightBoxGallery({ closeLightBox }: Props) {
   }, [])
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-lightbox">
+    <div className="bg-overlay fixed inset-0 z-50 flex items-center justify-center">
       <div className="flex flex-col">
         <button
           type="button"

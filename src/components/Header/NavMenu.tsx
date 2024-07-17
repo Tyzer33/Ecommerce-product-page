@@ -40,7 +40,7 @@ function NavMenu({ closeMenu }: Props) {
         animate="visible"
         exit="hidden"
         transition={defaultTransition}
-        className="absolute inset-0 bg-lightbox"
+        className="bg-overlay absolute inset-0"
       />
       <motion.section
         variants={menuVariants}

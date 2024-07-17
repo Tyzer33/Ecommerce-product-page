@@ -16,7 +16,7 @@ export default {
           active: 'hsla(var(--thumbnail-active))',
         },
         'accent-hover': 'hsla(var(--accent-hover))',
-        lightbox: 'hsla(var(--bg-lightbox))',
+        overlay: 'hsla(var(--bg-overlay))',
       },
       textColor: {
         body: 'hsla(var(--txt-body))',
