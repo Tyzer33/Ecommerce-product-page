@@ -1,12 +1,24 @@
 import { useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import NavLinks from './NavLinks'
 import IconClose from '../MainContent/ProductImages/IconClose'
 
 function NavMenu({ closeMenu }: Props) {
+  const shouldReduceMotion = useReducedMotion()
+
   const defaultTransition = {
     type: 'linear',
     duration: 0.3,
+  }
+
+  const backgroundVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  }
+
+  const menuVariants = {
+    hidden: shouldReduceMotion ? { opacity: 0 } : { x: '-100%' },
+    visible: shouldReduceMotion ? { opacity: 1 } : { x: 0 },
   }
 
   useEffect(() => {
@@ -21,17 +33,20 @@ function NavMenu({ closeMenu }: Props) {
   }, [])
 
   return (
-    <motion.div
-      initial={{ backgroundColor: 'hsla(0,0,0,0)' }}
-      animate={{ backgroundColor: 'hsla(0,0,0,0.75)' }}
-      exit={{ backgroundColor: 'hsla(0,0,0,0)' }}
-      transition={defaultTransition}
-      className="fixed inset-0 bg-black/50"
-    >
+    <div className="fixed inset-0">
+      <motion.div
+        variants={backgroundVariants}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        transition={defaultTransition}
+        className="absolute inset-0 bg-lightbox"
+      />
       <motion.section
-        initial={{ x: '-100%' }}
-        animate={{ x: 0 }}
-        exit={{ x: '-100%' }}
+        variants={menuVariants}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
         transition={defaultTransition}
         className="absolute inset-0 right-auto w-60 space-y-12 bg-main p-6"
       >
@@ -45,7 +60,7 @@ function NavMenu({ closeMenu }: Props) {
         </button>
         <NavLinks type="menu" />
       </motion.section>
-    </motion.div>
+    </div>
   )
 }
 export default NavMenu
