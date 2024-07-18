@@ -1,9 +1,12 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useAnimate, useReducedMotion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 import { useCartContext } from '@/utils/useCustomContext'
 
 function CartButtonCountBadge() {
   const { itemsInCart } = useCartContext()
   const shouldReduceMotion = useReducedMotion()
+  const isFirstRender = useRef(true)
+  const [scope, animate] = useAnimate()
 
   const variants = {
     hidden: shouldReduceMotion
@@ -28,8 +31,29 @@ function CartButtonCountBadge() {
         },
   }
 
+  /* Animate the badge when the items in cart change (except for the first and last render) */
+  useEffect(() => {
+    if (itemsInCart === 0 || shouldReduceMotion) return
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
+    animate(
+      scope.current,
+      {
+        scale: [1, 1.1, 1],
+        y: [0, -2, 0],
+      },
+      {
+        duration: 0.3,
+      },
+    )
+  }, [itemsInCart, animate, scope, shouldReduceMotion])
+
   return (
     <motion.div
+      ref={scope}
       variants={variants}
       initial="hidden"
       animate="visible"
