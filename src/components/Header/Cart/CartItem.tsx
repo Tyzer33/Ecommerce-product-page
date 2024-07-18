@@ -13,7 +13,7 @@ function CartItem({ productRef, quantity }: Props) {
       <img
         className="aspect-square h-[3.125rem] rounded-[.25rem]"
         src={images[0].thumbUrl}
-        alt={name}
+        alt={`${name} thumbnail`}
       />
       <div className="flex-1">
         <p>{name}</p>

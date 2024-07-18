@@ -61,6 +61,7 @@ function CartButtonCountBadge() {
       transition={{ duration: 0.3, type: 'spring' }}
       className="absolute -right-[6px] -top-[6px] flex h-[.8125rem] w-[1.1875rem] items-center justify-center rounded-xl bg-accent text-[.625rem]/[.75rem] font-bold text-white"
     >
+      <span className="sr-only">Number of items in cart:</span>
       {itemsInCart}
     </motion.div>
   )

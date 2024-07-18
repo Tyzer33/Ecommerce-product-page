@@ -50,12 +50,13 @@ function Carousel({
           isMobile && 'bg-black',
         )}
         onClick={handleClick}
+        aria-label={handleClick ? 'Open lightbox' : undefined}
       >
         <div
           className={twJoin('grid overflow-hidden', !isMobile && 'rounded-2xl')}
           style={{ gridTemplateColumns: `repeat(${images.length}, 100%)` }}
         >
-          {images.map(({ id, url }, index) => (
+          {images.map(({ id, url, alt }, index) => (
             <motion.div
               key={id}
               variants={variants}
@@ -69,7 +70,7 @@ function Carousel({
                     'm-auto aspect-[375/300] max-h-[31.25rem] object-cover',
                 )}
                 src={url}
-                alt={`Product ${id}`}
+                alt={alt}
               />
             </motion.div>
           ))}

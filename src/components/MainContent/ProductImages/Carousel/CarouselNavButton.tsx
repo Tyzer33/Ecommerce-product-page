@@ -7,6 +7,7 @@ function CarouselNavButton({
   className = '',
   displayContext,
   handleClick,
+  ariaLabel,
 }: BaseProps) {
   const isMobile = displayContext === 'mobile'
   const isLightbox = displayContext === 'lightbox'
@@ -22,6 +23,7 @@ function CarouselNavButton({
         className,
       )}
       onClick={handleClick}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
@@ -33,6 +35,7 @@ type BaseProps = {
   className?: string
   displayContext: 'mobile' | 'lightbox'
   handleClick: () => void
+  ariaLabel: string
 }
 
 export function CarouselPrevButton({ displayContext }: PrevNextProps) {
@@ -48,6 +51,7 @@ export function CarouselPrevButton({ displayContext }: PrevNextProps) {
       )}
       displayContext={displayContext}
       handleClick={prevImage}
+      ariaLabel="Previous image"
     >
       <IconPrev displayContext={displayContext} />
     </CarouselNavButton>
@@ -67,6 +71,7 @@ export function CarouselNextButton({ displayContext }: PrevNextProps) {
       )}
       displayContext={displayContext}
       handleClick={nextImage}
+      ariaLabel="Next image"
     >
       <IconNext displayContext={displayContext} />
     </CarouselNavButton>

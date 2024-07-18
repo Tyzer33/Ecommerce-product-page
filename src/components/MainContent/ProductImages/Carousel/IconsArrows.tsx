@@ -7,6 +7,7 @@ function IconArrow({ children, displayContext }: IconArrowProps) {
       viewBox="0 0 12 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
     >
       {children}
     </svg>

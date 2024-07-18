@@ -8,8 +8,10 @@ function ProductImages() {
 
   return (
     <ProductImagesProvider>
-      {isBelowLg && <ProductImagesMobile />}
-      {isAboveLg && <ProductImagesDesktop />}
+      <section aria-label="Product images carousel">
+        {isBelowLg && <ProductImagesMobile />}
+        {isAboveLg && <ProductImagesDesktop />}
+      </section>
     </ProductImagesProvider>
   )
 }

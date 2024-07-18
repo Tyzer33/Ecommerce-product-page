@@ -19,21 +19,25 @@ const product = {
       id: 1,
       url: image1,
       thumbUrl: thumbnail1,
+      alt: 'First image of the product',
     },
     {
       id: 2,
       url: image2,
       thumbUrl: thumbnail2,
+      alt: 'Second image of the product',
     },
     {
       id: 3,
       url: image3,
       thumbUrl: thumbnail3,
+      alt: 'Third image of the product',
     },
     {
       id: 4,
       url: image4,
       thumbUrl: thumbnail4,
+      alt: 'Fourth image of the product',
     },
   ],
 }
