@@ -1,4 +1,5 @@
 import { twJoin } from 'tailwind-merge'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useProductImagesContext } from '@/utils/useCustomContext'
 import { CarouselPrevButton, CarouselNextButton } from './CarouselNavButton'
 import ProductThumbnails from './CarouselThumbnails'
@@ -13,6 +14,7 @@ function Carousel({
   thumbs = false,
 }: Props) {
   const { selectedIndex } = useProductImagesContext()
+  const shouldReduceMotion = useReducedMotion()
 
   const WrapperTag = handleClick ? 'button' : 'div'
   const isButton = WrapperTag === 'button'
@@ -20,6 +22,16 @@ function Carousel({
   const isMobile = displayContext === 'mobile'
   const isDesktop = displayContext === 'desktop'
   const isLightbox = displayContext === 'lightbox'
+
+  const variants = {
+    changeIndex: {
+      translate: `${selectedIndex * -100}%`,
+      transition: {
+        duration: shouldReduceMotion ? 0 : 0.3,
+        type: 'tween',
+      },
+    },
+  }
 
   return (
     <div
@@ -44,10 +56,11 @@ function Carousel({
           style={{ gridTemplateColumns: `repeat(${images.length}, 100%)` }}
         >
           {images.map(({ id, url }, index) => (
-            <div
+            <motion.div
               key={id}
-              className="transition-[translate] duration-300 motion-reduce:transition-none"
-              style={{ translate: `${selectedIndex * -100}%` }}
+              variants={variants}
+              initial="changeIndex"
+              animate="changeIndex"
               aria-hidden={index !== selectedIndex}
             >
               <img
@@ -58,7 +71,7 @@ function Carousel({
                 src={url}
                 alt={`Product ${id}`}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
         {arrows && (
