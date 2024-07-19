@@ -87,6 +87,9 @@ export default {
     },
   },
   plugins: [
+    plugin(({ addVariant }) => {
+      addVariant('focus-visible-within', '&:has(:focus-visible)')
+    }),
     plugin(({ matchUtilities, theme }) => {
       const newUtilities: Parameters<typeof matchUtilities>[0] = {
         'expand-click': (value) => {
