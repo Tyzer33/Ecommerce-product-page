@@ -13,7 +13,7 @@ function Carousel({
   arrows = false,
   thumbs = false,
 }: Props) {
-  const { selectedIndex } = useProductImagesContext()
+  const { selectedIndex, prevImage, nextImage } = useProductImagesContext()
   const shouldReduceMotion = useReducedMotion()
 
   const WrapperTag = handleClick ? 'button' : 'div'
@@ -33,9 +33,24 @@ function Carousel({
     },
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+      prevImage()
+    }
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+      nextImage()
+    }
+  }
+
   return (
     <div
+      role="button"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
       className={twJoin(
+        'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent',
+        !isMobile &&
+          'rounded-b-[.625rem] rounded-t-2xl focus-visible:outline-offset-8',
         isDesktop && 'max-w-[27.8125rem] flex-1 space-y-8',
         isLightbox && 'mt-[1.375rem] w-[34.375rem] space-y-10',
       )}
