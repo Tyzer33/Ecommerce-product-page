@@ -87,7 +87,10 @@ function Carousel({
         )}
       </WrapperTag>
       {thumbs && (
-        <ProductThumbnails className={twJoin(isLightbox && 'mx-[3.25rem]')} />
+        <ProductThumbnails
+          className={twJoin(isLightbox && 'mx-[3.25rem]')}
+          displayContext={displayContext}
+        />
       )}
     </div>
   )

@@ -4,7 +4,7 @@ import { useProductImagesContext } from '@/utils/useCustomContext'
 
 const { images } = product
 
-function ProductThumbnails({ className = '' }: Props) {
+function ProductThumbnails({ className = '', displayContext }: Props) {
   const { setSelectedIndex, selectedIndex } = useProductImagesContext()
 
   return (
@@ -25,12 +25,12 @@ function ProductThumbnails({ className = '' }: Props) {
               ? 'ring-2 ring-accent after:bg-thumbnail-active'
               : 'hover:after:bg-thumbnail-hover focus-visible:after:bg-thumbnail-hover',
           )}
-          htmlFor={`thumbnail-${id}`}
+          htmlFor={`thumbnail-${displayContext}-${id}`}
           key={id}
         >
           <input
             type="radio"
-            id={`thumbnail-${id}`}
+            id={`thumbnail-${displayContext}-${id}`}
             name="thumbnail"
             className="sr-only"
             checked={index === selectedIndex}
@@ -47,4 +47,5 @@ export default ProductThumbnails
 
 type Props = {
   className?: string
+  displayContext: 'mobile' | 'desktop' | 'lightbox'
 }
